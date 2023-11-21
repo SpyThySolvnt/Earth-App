@@ -18,6 +18,7 @@ JTextField Email;
 JTextField Address;
 JButton Signup;
 JComboBox DAY;
+JComboBox Mon
 Container c;
 
 
@@ -46,6 +47,7 @@ Signup(){
 
 
    Integer[] Day ={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
+   String[] Month ={"January","Febuary","March","April","May","June","July","August","October","November","December"};
 
    JLabel username = new JLabel("User Name:");
     username.setBounds(80,100,200,50);
@@ -69,7 +71,8 @@ Signup(){
    Address.setBounds(150,300,150,50);
    JLabel dob = new JLabel("Date Of Birth:");
    DAY = new JComboBox(Day); 
-   DAY.setBounds(200,350,150,50);
+   DAY.setBounds(200,350,50,50);
+   Mon = new JComboBox(Month);
 
 
 
