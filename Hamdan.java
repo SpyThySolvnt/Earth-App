@@ -8,7 +8,7 @@
     public class Hamdan extends JFrame{
         JButton login;
         JButton admin;
-        //JButton signup;
+        JButton signup;
         JTextField username;
         JTextField pass;
         Container c;
@@ -30,7 +30,6 @@ public static void main(String[] args){
 
 private class ALadmin implements ActionListener{
     public void actionPerformed(ActionEvent e){
-            Signup x = new Signup();
             admin.setEnabled(false);
             
             
@@ -43,11 +42,12 @@ private class ALlogin implements ActionListener{
 
 }
 }
-
-
-
-
-
+private class ALsignup implements ActionListener{
+    public void actionPerformed(ActionEvent e){
+        Signup x = new Signup();
+        signup.setEnabled(false);
+    }
+}
 
 
 
@@ -80,8 +80,8 @@ private class ALlogin implements ActionListener{
         admin.setBounds(550,0,150,50);
         login = new JButton("Login");
         login.setBounds(220, 300, 220, 50);
-
-
+        signup = new JButton("Sign Up");
+        signup.setBounds(220,350,220,50);
 
 
 
@@ -90,7 +90,8 @@ private class ALlogin implements ActionListener{
         admin.addActionListener(adButton);
         ALlogin lgButton = new ALlogin();
         login.addActionListener(lgButton);
-
+        ALsignup suButton = new ALsignup();
+        signup.addActionListener(suButton);    
 
 
         
@@ -110,9 +111,10 @@ private class ALlogin implements ActionListener{
         c.add(pass);
         c.add(admin);
         c.add(login);
+        c.add(signup);
 
 
-        //I dont know how to make with no error lol
+        //I dont know how to make with no error
 
 
 
