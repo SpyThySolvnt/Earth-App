@@ -9,8 +9,9 @@ public class Admin {
     private String id;
     private String password;
 
-    // Initiatives awaiting approval
-    private List<Initiative> pendingInitiatives;
+    private Initiative[] initiatives;  // Array to store initiatives
+    private Initiator[] initiators;    // Array to store initiators
+    private Volunteer[] volunteers;    // Array to store volunteers
 
     // Constructor
     public Admin(String name, String id, String password) {
@@ -33,7 +34,7 @@ public class Admin {
         return password;
     }
     
-    
+
     // Admin login method
     public boolean login(String enteredPassword) {
         return password.equals(enteredPassword);
@@ -68,8 +69,6 @@ public class Admin {
     public void viewDetails(Object record) {
         // Implementation to display details of a record
     }
-
-
     
 }
 
