@@ -112,6 +112,9 @@ private class ALlogin implements ActionListener{
         c.add(login);
 
 
+        //I dont know how to make with no error lol
+
+
 
 
 
