@@ -49,10 +49,30 @@ public class Admin {
             pendingInitiatives.remove(initiative);
         }
     }
-
     // Remove initiative, initiator, or volunteer
     public void removeRecord(Object record) {
-        // Implementation to remove a record from the database
+        if (record instanceof Initiative) {
+            removeInitiative((Initiative) record);
+        } else if (record instanceof Initiator) {
+            removeInitiator((Initiator) record);
+        } else if (record instanceof Volunteer) {
+            removeVolunteer((Volunteer) record);
+        }
+    }
+
+    private void removeInitiative(Initiative initiative) {
+        // Implementation to remove an initiative from the array
+        for (int i = 0; i < initiatives.length; i++) {
+            if (initiatives[i].equals(initiative)) {
+                // Remove the initiative by shifting elements
+                System.arraycopy(initiatives, i + 1, initiatives, i, initiatives.length - 1 - i);
+                // Set the last element to null or create a new array with reduced size
+                initiatives[initiatives.length - 1] = null;
+                // Write updated initiatives array back to the file or database
+                writeInitiativesToFile();
+                break;
+            }
+        }
     }
 
     // View all initiatives in tabular form
