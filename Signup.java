@@ -17,7 +17,7 @@ JTextField Email;
 //JTextField DOB;
 JTextField Address;
 JButton Signup;
-JComboBox Day;
+JComboBox DAY;
 Container c;
 
 
@@ -68,12 +68,20 @@ Signup(){
    Address = new JTextField();
    Address.setBounds(150,300,150,50);
    JLabel dob = new JLabel("Date Of Birth:");
-   x = new JComboBox(Day);
-   Day.addActionListener
+   DAY = new JComboBox(Day); 
+   DAY.setBounds(200,350,150,50);
 
 
 
 
+
+
+   ALbox DAYS = new ALbox();
+   DAY.addActionListener(DAYS);
+
+
+   //ALadmin adButton = new ALadmin();
+   //admin.addActionListener(adButton);
 
 
    setVisible(true);
@@ -81,16 +89,17 @@ Signup(){
    setLocationRelativeTo(null);
 
    // add assets
-    add(username);
-    add(UserN);
-    add(password);
-    add(Pass);
-    add(phoneNum);
-    add(PhoneNum);
-    add(email);
-    add(Email);
-    add(address);
-    add(Address);
+    c.add(username);
+    c.add(UserN);
+    c.add(password);
+    c.add(Pass);
+    c.add(phoneNum);
+    c.add(PhoneNum);
+    c.add(email);
+    c.add(Email);
+    c.add(address);
+    c.add(Address);
+    c.add(DAY);
 
 }
 
