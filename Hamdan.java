@@ -31,6 +31,7 @@ public static void main(String[] args){
 private class ALadmin implements ActionListener{
     public void actionPerformed(ActionEvent e){
             admin.setEnabled(false);
+            AdminFrame y = new AdminFrame();
             
             
 
