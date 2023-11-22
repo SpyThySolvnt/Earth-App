@@ -54,7 +54,7 @@ Signup(){
 
     c = getContentPane();
     c.setLayout(null);
-   setSize(700,700);
+   setSize(420,500);
    setTitle("Sign Up");
 
 

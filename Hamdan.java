@@ -32,6 +32,7 @@ private class ALadmin implements ActionListener{
     public void actionPerformed(ActionEvent e){
             admin.setEnabled(false);
             AdminFrame y = new AdminFrame();
+            dispose();
             
             
 
@@ -47,6 +48,7 @@ private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
         Signup x = new Signup();
         signup.setEnabled(false);
+        dispose();
     }
 }
 
