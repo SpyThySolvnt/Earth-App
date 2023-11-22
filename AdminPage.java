@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 import javax.swing.*;
 
-public class AdminPage{
+public class AdminPage extends JFrame{
 
 
     JButton Approve;
