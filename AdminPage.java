@@ -34,7 +34,7 @@ public class AdminPage{
     Welcome.setBounds(0,0,500,60);
 
     Initiatives = new JTextArea();
-    Initiatives.serBounds(100,100,500,500);
+    Initiatives.setBounds(100,100,500,500);
 
 
 
