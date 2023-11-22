@@ -17,6 +17,16 @@ public class AdminFrame extends JFrame{
 
 
 
+    private class ALenter implements ActionListener{
+        public void actionPerformed(ActionEvent e){     
+            AdminPage();
+
+        }
+    }
+
+
+
+
 
 
 
@@ -55,7 +65,9 @@ public class AdminFrame extends JFrame{
         
 
 
-
+        //Buttons
+        ALenter enButton = new ALenter();
+        Enter.addActionListener(enButton);
 
 
 
