@@ -14,14 +14,15 @@ public class User {
     private List<Initiative> volunteeringJobs;
 
     // Constructor
-    public User(String name, String dateOfBirth, String email, String phoneNumber, String address, String password) {
+    public User(String name, String password, String email , String phoneNumber, String  address, String  dateOfBirth) {
         this.name = name;
         this.id = generateUserId(); // You need to implement this method
-        this.dateOfBirth = dateOfBirth;
         this.email = email;
+        this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.password = password;
+
         this.registeredInitiatives = new ArrayList<>();
         this.volunteeringJobs = new ArrayList<>();
     }
