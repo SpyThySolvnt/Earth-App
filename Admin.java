@@ -32,7 +32,7 @@ public class Admin {
     // High-level operations for managing initiatives
     public void processInitiative(Initiative initiative, boolean approve) {
         if (initiative != null) {
-            initiative.process(approve);
+            initiative.StatusBoolean = approve;
         }
     }
 
@@ -55,6 +55,3 @@ public class Admin {
         }
     }
 }
-
-
-
