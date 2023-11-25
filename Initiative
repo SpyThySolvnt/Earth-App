@@ -1,6 +1,6 @@
 import java.util.*;
 import java.io.*;
-class Initiative extends User{
+class Initiative extends UserClass{
 	String  dateOfEvent,timeOfEvent,descriptionOfEvent,statusOfEvent;
 	String idOfEvent, placeOfEvent;
 	int hour,minute,day,month,year;
