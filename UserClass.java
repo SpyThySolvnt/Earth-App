@@ -14,7 +14,7 @@ public class UserClass {
     private List<Initiative> volunteeringJobs;
 
     // Constructor
-    public UserClass(String name, String password, String email , String phoneNumber, String  address, String  dateOfBirth) {
+    public UserClass(String name, String password, String phoneNumber, String email , String  address, String  dateOfBirth) {
         this.name = name;
         this.id = generateUserId(); // You need to implement this method
         this.email = email;
