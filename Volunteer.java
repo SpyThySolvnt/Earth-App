@@ -22,9 +22,11 @@ public class Volunteer extends UserClass {
         // Implementation to withdraw the user from a volunteering initiative
     }
 
-    public void generateVolunteerReport() {
-        // Implementation to generate a report of the user's volunteering history and points
-    }
+     public void generateVolunteerReport() {
+    	String vfout = getName()+getId()+".txt";
+    	PrintWriter fn = new PrintWriter(vfout);
+    	fn.println(); // needs to print the credits and other details, not done
+    	
 
     @Override
     public String toString() {
