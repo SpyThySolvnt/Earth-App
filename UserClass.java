@@ -13,6 +13,16 @@ public class UserClass {
     private List<Initiative> registeredInitiatives;
     private List<Initiative> volunteeringJobs;
 
+
+     public UserClass() {
+    	   id = generateUserId(); 
+    }// Empty Constructor But it has an ID
+    
+    //Constructor for initiative
+    public UserClass(String name) {
+    	 this.name = name;
+         id = generateUserId(); 
+    }
     // Constructor
     public UserClass(String name, String password, String phoneNumber, String email , String  address, String  dateOfBirth) {
         this.name = name;
@@ -104,10 +114,6 @@ public class UserClass {
 
     public void withdrawFromInitiative(Initiative initiative) {
         // Implementation to withdraw the user from a volunteering initiative
-    }
-
-    public void generateVolunteerReport() {
-        // Implementation to generate a report of the user's volunteering history and points
     }
 
     // Private method to generate a unique user ID
