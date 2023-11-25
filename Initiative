@@ -6,10 +6,11 @@ class Initiative extends UserClass{
 	int hour,minute,day,month,year;
 	int credit;
 
-	//Empty Constructor
+		//Empty Constructor
 	public Initiative(String name, String id) {
 	super(name);
 	id = super.getId();
+	this.idOfEvent = setIdOfEvent();
 	}
 	
 	//Full Constructor
