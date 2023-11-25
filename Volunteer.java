@@ -26,7 +26,7 @@ public class Volunteer extends UserClass {
     	String vfout = getName()+getId()+".txt";
     	PrintWriter fn = new PrintWriter(vfout);
     	fn.println(); // needs to print the credits and other details, not done
-    	
+    	// Implementation to generate a report of the user's volunteering history and points
 
     @Override
     public String toString() {
