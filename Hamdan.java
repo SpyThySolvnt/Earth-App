@@ -41,6 +41,8 @@ private class ALadmin implements ActionListener{
 private class ALlogin implements ActionListener{
     public void actionPerformed(ActionEvent e){
         System.out.println("login");
+        LoginPage z = new LoginPage();
+        dispose();
 
 }
 }
