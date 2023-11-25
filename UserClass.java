@@ -93,8 +93,8 @@ public class UserClass {
         // Implementation to edit an existing initiative by the user
     }
 
-    public void deleteInitiative(Initiative initiative) {
-        // Implementation to delete an initiative by the user
+   public void deleteInitiative(Initiative initiative) {
+       initiative = null;
     }
 
     public List<Initiative> viewRegisteredVolunteers() {
