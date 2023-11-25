@@ -10,6 +10,8 @@ public class LoginPage extends JFrame{
 
     JButton Initiative;
     JButton Settings;
+    JTextArea Place;
+    
     Container c;
 
 
@@ -41,18 +43,20 @@ public class LoginPage extends JFrame{
     //A must on Jfranes
     setVisible(true);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
-    setLocationRelativeTo(null);
     c = getContentPane();
     c.setLayout(null);
     setSize(900,700);
     setTitle("Earth App");
 
 
-
+    
     JLabel initiative = new JLabel ("Welcome to the Earth App %n Here you can Volunteer and Create Initiative to help save the world bit by bit!");
-    initiative.setBounds(0,0,600,150);
+    initiative.setBounds(150,0,600,150);
+
+    
 
 
+    
 
 
 
@@ -60,9 +64,9 @@ public class LoginPage extends JFrame{
     //buttons
 
     Initiative = new JButton("Create An Initiative");
-    Initiative.setBounds(400,100,400,100);
+    Initiative.setBounds(250,100,400,50);
     Settings = new JButton("Settings");
-    Settings.setBounds(100,500,200,100);
+    Settings.setBounds(0,580,150,80);
 
     ALinitiative Ini = new ALinitiative();
     Initiative.addActionListener(Ini);
@@ -82,7 +86,7 @@ public class LoginPage extends JFrame{
 
 
 
-
+        setLocationRelativeTo(null);
     }
 
 

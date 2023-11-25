@@ -25,23 +25,11 @@ public class AdminFrame extends JFrame{
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
     AdminFrame(){
 
         //A must on Jfranes
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
         c = getContentPane();
         c.setLayout(null);
         setSize(500,300);
@@ -87,6 +75,9 @@ public class AdminFrame extends JFrame{
         c.add(password);
         //c.add(id);
         c.add(Enter);
+
+
+        setLocationRelativeTo(null);
 
 
     }
