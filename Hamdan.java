@@ -20,8 +20,8 @@
 
 public static void main(String[] args){
 
-         Hamdan x = new Hamdan(); 
-        
+        // Hamdan x = new Hamdan(); 
+        Complaint y = new Complaint();
         
         }
         

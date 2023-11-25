@@ -25,6 +25,8 @@ public class LoginPage extends JFrame{
     }
     private class ALsettings implements ActionListener{
         public void actionPerformed(ActionEvent e){     
+            Settings x = new Settings();
+            dispose();
             
             
 
@@ -50,7 +52,7 @@ public class LoginPage extends JFrame{
 
 
     
-    JLabel initiative = new JLabel ("Welcome to the Earth App %n Here you can Volunteer and Create Initiative to help save the world bit by bit!");
+    JLabel initiative = new JLabel ("Welcome to the Earth App Here you can Volunteer and Create Initiative to help save the world bit by bit!");
     initiative.setBounds(150,0,600,150);
 
     

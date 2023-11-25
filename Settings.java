@@ -54,12 +54,23 @@ public class Settings extends JFrame{
 
         //buttons
         EditInfo = new JButton("Edit Info");
+        EditInfo.setBounds(100,100,200,50);
         ALeditinfo ei = new ALeditinfo();
         EditInfo.addActionListener(ei);
 
         Complaint = new JButton("Complaint");
+        Complaint.setBounds(100,200,200,50);
         ALcomplaint cm =new ALcomplaint();
         Complaint.addActionListener(cm);
+
+
+
+
+        c.add(EditInfo);
+        c.add(Complaint);
+
+
+        setLocationRelativeTo(null);
         
 
 
