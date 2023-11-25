@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class Complaint extends JFrame{
 
-    JTextArea Issue;
+    JTextArea Issue; 
     JButton Submit;
     Container c;
 
@@ -27,22 +27,22 @@ public class Complaint extends JFrame{
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     c = getContentPane();
     c.setLayout(null);
-    setSize(1000,1000);
+    setSize(500,300);
     setTitle("Complaints");
 
 
 
 
     JLabel issue = new JLabel("Whats Your Complaint About The App?");
-    issue.setBounds(0,0,300,50);
+    issue.setBounds(135,50,300,50);
     
     Issue = new JTextArea();
-    Issue.setBounds(250,250,400,400);
+    Issue.setBounds(45,100,400,100);
 
 
     //buttons
     Submit = new JButton("Submit");
-    Submit.setBounds(250,750,100,50);
+    Submit.setBounds(0,210,500,50);
     ALsubmit sb = new ALsubmit();
     Submit.addActionListener(sb);
 
