@@ -68,6 +68,9 @@ public class UserClass {
 
     // User editing personal information
     public void editPersonalInfo(String newEmail, String newPhoneNumber, String newAddress) {
+        email = newEmail;
+        phoneNumber = newPhoneNumber;
+        address = newAddress;
         // Implementation to edit personal information
     }
 
