@@ -1,0 +1,15 @@
+import java.time.LocalDateTime;
+
+public class Main {
+    public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+
+        int currentyear = now.getYear();
+        int currentmonth = now.getMonthValue();
+        int currentday = now.getDayOfMonth();
+        int currenthour = now.getHour();
+        int currentminute = now.getMinute();
+
+        
+}
+}
