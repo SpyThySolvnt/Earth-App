@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class UserClass {
     // Attributes
     private String name;
     private String id;  // Auto-generated
@@ -14,7 +14,7 @@ public class User {
     private List<Initiative> volunteeringJobs;
 
     // Constructor
-    public User(String name, String password, String email , String phoneNumber, String  address, String  dateOfBirth) {
+    public UserClass(String name, String password, String phoneNumber, String email , String  address, String  dateOfBirth) {
         this.name = name;
         this.id = generateUserId(); // You need to implement this method
         this.email = email;
@@ -68,6 +68,9 @@ public class User {
 
     // User editing personal information
     public void editPersonalInfo(String newEmail, String newPhoneNumber, String newAddress) {
+        email = newEmail;
+        phoneNumber = newPhoneNumber;
+        address = newAddress;
         // Implementation to edit personal information
     }
 

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Admin {
     private String name;
     private String id;
@@ -55,21 +56,5 @@ public class Admin {
     }
 }
 
-class Initiative {
-    // Implementation for Initiative class
-    // ...
 
-    public void process(boolean approve) {
-        // Specific implementation for processing an initiative
-    }
-}
 
-class Initiator {
-    // Implementation for Initiator class
-    // ...
-}
-
-class Volunteer {
-    // Implementation for Volunteer class
-    // ...
-}
