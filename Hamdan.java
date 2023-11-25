@@ -20,7 +20,10 @@
 
 public static void main(String[] args){
 
-         Hamdan x = new Hamdan(); }
+         Hamdan x = new Hamdan(); 
+        
+        
+        }
         
 
 
@@ -41,6 +44,8 @@ private class ALadmin implements ActionListener{
 private class ALlogin implements ActionListener{
     public void actionPerformed(ActionEvent e){
         System.out.println("login");
+        LoginPage z = new LoginPage();
+        dispose();
 
 }
 }
@@ -103,8 +108,6 @@ private class ALsignup implements ActionListener{
         //A must on JFrames
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
 
         //adding assets
         c.add(EnterStuff);
@@ -115,26 +118,9 @@ private class ALsignup implements ActionListener{
         c.add(admin);
         c.add(login);
         c.add(signup);
-
-
         //I dont know how to make with no error
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        setLocationRelativeTo(null);
 
         }
     }

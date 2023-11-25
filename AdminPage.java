@@ -13,17 +13,12 @@ public class AdminPage extends JFrame{
     Container c;
 
 
-
-
-
     AdminPage(){
     
 
-    
     //A must on Jfranes
     setVisible(true);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
-    setLocationRelativeTo(null);
     c = getContentPane();
     c.setLayout(null);
     setSize(900,700);
@@ -40,6 +35,9 @@ public class AdminPage extends JFrame{
 
     c.add(Welcome);
     c.add(Initiatives);
+
+    //for some reason this needs to be in the end
+    setLocationRelativeTo(null);
 
 
     }
