@@ -1,12 +1,22 @@
 import java.util.*;
 import java.io.*;
+import java.time.LocalDateTime;
 class Initiative extends UserClass{
 	String  dateOfEvent,timeOfEvent,descriptionOfEvent,statusOfEvent;
 	String idOfEvent, placeOfEvent;
 	int hour,minute,day,month,year;
 	int credit;
+	boolean StatusBoolean;
+	String Status;
+	   LocalDateTime now = LocalDateTime.now();
 
-		//Empty Constructor
+       int currentyear = now.getYear();
+       int currentmonth = now.getMonthValue();
+       int currentday = now.getDayOfMonth();
+       int currenthour = now.getHour();
+       int currentminute = now.getMinute();
+       
+	//Empty Constructor
 	public Initiative(String name, String id) {
 	super(name);
 	id = super.getId();
@@ -103,7 +113,13 @@ class Initiative extends UserClass{
 		
 		// Needs admin class to be completed
 		public String getStatus() {
-			return "ds";
+		Status = "Pending";
+			if (StatusBoolean & (year<currentyear | (year==currentyear&&month<currentmonth)| (year==currentyear &&month==currentmonth&&day<currentday)|  (year==currentyear &&month==currentmonth&&day==currentday&& hour<currenthour)|(year==currentyear &&month==currentmonth&&day==currentday&& hour==currenthour&& minute<currentminute)))
+				Status = "Active";
+				else if (StatusBoolean= false)
+				Status = "expired";
+					
+			return Status;
 		}
 //Getters end here(2)
 		// This is for initiating an event, waiting for JFrame inputs to declare them here. (40%)
