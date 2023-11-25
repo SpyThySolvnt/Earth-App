@@ -20,6 +20,7 @@ public class AdminFrame extends JFrame{
     private class ALenter implements ActionListener{
         public void actionPerformed(ActionEvent e){     
             AdminPage x = new AdminPage();
+            dispose();
 
         }
     }
