@@ -22,12 +22,15 @@ public class Volunteer extends UserClass {
         // Implementation to withdraw the user from a volunteering initiative
     }
 
-     public void generateVolunteerReport() {
-    	String vfout = getName()+getId()+".txt";
-    	PrintWriter fn = new PrintWriter(vfout);
-    	fn.println(); // needs to print the credits and other details, not done
+       public void generateVolunteerReport() throws FileNotFoundException {
+    	String flocation = getName()+""+getId()+".txt";
+    	PrintWriter v2fout = new PrintWriter(flocation);
+    	v2fout.println(" hi ");
+    	v2fout.close();
+    	// needs to print the credits and other details, not done
     	// Implementation to generate a report of the user's volunteering history and points
-
+     }
+    
     @Override
     public String toString() {
         return "Volunteer{" +
