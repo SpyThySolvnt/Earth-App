@@ -118,7 +118,8 @@ public class UserClass {
 
     // Private method to generate a unique user ID
     private String generateUserId() {
-        // Implementation to generate a unique user ID
-        return "GeneratedID"; // You need to implement this method
+    	id = UUID.randomUUID().toString();
+		return id
+				;
     }
 }
