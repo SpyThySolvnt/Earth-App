@@ -8,12 +8,14 @@ class Initiative extends User{
 
 	//Empty Constructor
 	public Initiative(String name, String id) {
-	super(name,id);	
+	super(name);
+	id = super.getId();
 	}
 	
 	//Full Constructor
 	public Initiative(String name,String id,String dateOfEvent,String timeOfEvent,String descriptionOfEvent) {
-		super(name,id);
+		super(name);
+		id = super.getId();
 		this.idOfEvent = setIdOfEvent();
 		this.dateOfEvent=dateOfEvent;
 		this.descriptionOfEvent=descriptionOfEvent;
