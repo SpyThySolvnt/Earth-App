@@ -12,6 +12,7 @@ public class InitiativeFrame extends JFrame{
     JButton Submit;
     JButton Back;
     Container c;
+    
 
 
 

@@ -9,8 +9,8 @@ public class AdminFrame extends JFrame{
 
 
     JTextField username;
-    JTextField password;
-   // JTextField id;
+    JPasswordField password;
+    JCheckBox Nike;
     Container c;
     JButton Enter;
 
@@ -22,6 +22,14 @@ public class AdminFrame extends JFrame{
             AdminPage x = new AdminPage();
             dispose();
 
+        }
+    }
+    private class ALnike implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            if(Nike.isSelected()){
+            password.setEchoChar((char)0);}
+            else{
+            password.setEchoChar('*');}
         }
     }
 
@@ -43,10 +51,12 @@ public class AdminFrame extends JFrame{
         username.setBounds(200,50,150,50);
         JLabel Pass = new JLabel("Password:");
         Pass.setBounds(100,100,150,50);
-        password = new JTextField();
+        password = new JPasswordField();
         password.setBounds(200,100,150,50);
         Enter = new JButton("Enter");
         Enter.setBounds(100,210,300,50);
+        Nike = new JCheckBox("Show Password");
+        Nike.setBounds(200,150,150,50);
        // JLabel Id = new JLabel("ID :");
        // Id.setBounds(100,200,150,50);
         //id = new JTextField();
@@ -57,6 +67,8 @@ public class AdminFrame extends JFrame{
         //Buttons
         ALenter enButton = new ALenter();
         Enter.addActionListener(enButton);
+        ALnike k = new ALnike();
+        Nike.addActionListener(k);  
 
 
 
@@ -75,6 +87,7 @@ public class AdminFrame extends JFrame{
         c.add(password);
         //c.add(id);
         c.add(Enter);
+        c.add(Nike);
 
 
         setLocationRelativeTo(null);
