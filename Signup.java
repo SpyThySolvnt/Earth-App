@@ -41,6 +41,7 @@ private class ALbox3 implements ActionListener{
 }
 private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
+        Hamdan x = new Hamdan();
         dispose();
     }
 }

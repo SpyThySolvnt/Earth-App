@@ -12,7 +12,8 @@ public class Complaint extends JFrame{
     Container c;
 
     private class ALsubmit implements ActionListener{
-        public void actionPerformed(ActionEvent e){     
+        public void actionPerformed(ActionEvent e){ 
+            Hamdan x = new Hamdan();    
             dispose();
             
 

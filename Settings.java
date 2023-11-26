@@ -16,7 +16,7 @@ public class Settings extends JFrame{
     private class ALeditinfo implements ActionListener{
         public void actionPerformed(ActionEvent e){     
             EditInfo z = new EditInfo();
-            
+            dispose();
             
 
         }
