@@ -3,9 +3,11 @@ import java.io.*;
 
 public class UserClass {
     // Attributes
-    private String name;
+    private String name ;
     private String id;  // Auto-generated
-    private String dateOfBirth;
+    private String day;
+    private String month;
+    private String year;
     private String email;
     private String phoneNumber;
     private String address;
@@ -21,32 +23,38 @@ public class UserClass {
     PrintWriter foutI = new PrintWriter(new FileOutputStream(new File("C:\\Users\\3R\\Desktop\\FileOfInitiator.txt"),true));
     
     // Constructor
-    public UserClass(String FinalType, String name, String password, String phoneNumber, String email , String  address, String  dateOfBirth) throws FileNotFoundException{
-        this.FinalType = FinalType;
+    public UserClass( String name, String password, String phoneNumber, String email , String  address, String day, String month, String year) throws FileNotFoundException{
+
     	this.name = name;
         this.id = generateUserId(); // You need to implement this method
         this.email = email;
-        this.dateOfBirth = dateOfBirth;
+        this.day = day;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.password = password;
-        this.registeredInitiatives = new ArrayList<>();
-        this.volunteeringJobs = new ArrayList<>();
-        foutU.println(this);
-      foutU.close();
-      if (FinalType.equals("Volunteer")) {
-    	  foutV.println(this);
-          foutV.close();
-      } else if (FinalType.equals("Initiator")) {
-    	  foutI.println(this);
-          foutI.close();
-      } else if (FinalType.equals("Volunteer and Initiator")) {
-    	  foutV.println(this);
-          foutV.close();
-          foutI.println(this);
-          foutI.close();
-      }
+        this.day=day;
+        this.month=month;
+        this.year=year;
+        
+        allUL.add(this);
+        
+        
     }
+//        foutU.println(this);
+//      foutU.close();
+//      if (FinalType.equals("Volunteer")) {
+//    	  foutV.println(this);
+//          foutV.close();
+//      } else if (FinalType.equals("Initiator")) {
+//    	  foutI.println(this);
+//          foutI.close();
+//      } else if (FinalType.equals("Volunteer and Initiator")) {
+//    	  foutV.println(this);
+//          foutV.close();
+//          foutI.println(this);
+//          foutI.close();
+//      }
+//    }
 
 //    public void generateVolunteerReport() throws FileNotFoundException {
 //    	String flocation = getName()+""+getId()+".txt";
@@ -107,17 +115,10 @@ public class UserClass {
     }
     
 	  public String toString() {
-	        return "(" + FinalType +
-	                " ID ='" + getId() + ") (" +
-	                " Name ='" + getName() + ") (" +
-	                " Date-Of-Birth ='" + getDateOfBirth() + ") (" +
-	                " Email ='" + getEmail() + '\'' +
-	                " Phone-Number ='" + getPhoneNumber() + ") (" +
-	                " Address ='" + getAddress() + ") (" +
-	                " Password ='" + getPassword() + ") (" +
-	                " Volunteering-Jobs =" + volunteeringJobs+ ")\n";
+	        return "Name: "+name+" Password: "+password+" Email: "+email+" Address: "+address+" Day: "+day+" Month: "+month+" Year: "+year;
+	               
 	    }
-    
+	
  // Getter methods for attributes
     public String getName() {
         return name;
@@ -126,7 +127,7 @@ public class UserClass {
         return id;
     }
     public String getDateOfBirth() {
-        return dateOfBirth;
+        return day;
     }
     public String getEmail() {
         return email;
