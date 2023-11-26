@@ -46,6 +46,10 @@ private class ALadmin implements ActionListener{
 }
 private class ALlogin implements ActionListener{
     public void actionPerformed(ActionEvent e){
+        if(username.getText().equals())
+
+
+
         LoginPage z = new LoginPage();
         dispose();
 
@@ -53,6 +57,7 @@ private class ALlogin implements ActionListener{
 }
 private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
+        
         Signup x = new Signup();
         signup.setEnabled(false);
         dispose();
