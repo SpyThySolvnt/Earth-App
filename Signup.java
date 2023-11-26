@@ -42,6 +42,11 @@ private class ALbox3 implements ActionListener{
 }
 private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
+        UserClass(UserN.getText(),Pass.getText(),PhoneNum.getText(),Email.getText(),Address.getText());
+
+
+
+
         Hamdan x = new Hamdan();
         dispose();
     }
