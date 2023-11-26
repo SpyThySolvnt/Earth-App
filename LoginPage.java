@@ -18,7 +18,8 @@ public class LoginPage extends JFrame{
 
     private class ALinitiative implements ActionListener{
         public void actionPerformed(ActionEvent e){     
-            
+            InitiativeFrame x = new InitiativeFrame();
+            dispose();
             
 
         }

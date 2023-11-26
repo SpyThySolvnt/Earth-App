@@ -12,6 +12,7 @@
         JTextField username;
         JTextField pass;
         Container c;
+        JLabel Photo;
 
         
 
@@ -21,6 +22,7 @@
 public static void main(String[] args){
 
          Hamdan x = new Hamdan(); 
+         
         
         
         }
@@ -77,6 +79,8 @@ private class ALsignup implements ActionListener{
         EnterPass.setBounds(180, 100, 250, 250);
         pass = new JTextField();
         pass.setBounds(260,200,220,50);
+        Photo = new JLabel("");
+        Photo.setBounds(150,100,100,100);
         
 
 
@@ -117,6 +121,7 @@ private class ALsignup implements ActionListener{
         c.add(admin);
         c.add(login);
         c.add(signup);
+        c.add(Photo);
         //I dont know how to make with no error
 
         setLocationRelativeTo(null);
