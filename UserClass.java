@@ -12,6 +12,8 @@ public class UserClass {
     private String password;
     private List<Initiative> registeredInitiatives;
     private List<Initiative> volunteeringJobs;
+    ArrayList<Admin> adminusers = new ArrayList<Admin>();
+    
 
 
      public UserClass() {

@@ -10,9 +10,10 @@
         JButton admin;
         JButton signup;
         JTextField username;
-        JTextField pass;
-        Container c;
+        JPasswordField pass;
         JLabel Photo;
+        JCheckBox Nike; 
+        Container c;
 
         
 
@@ -57,6 +58,14 @@ private class ALsignup implements ActionListener{
         dispose();
     }
 }
+private class ALnike implements ActionListener{
+    public void actionPerformed(ActionEvent e){
+        if(Nike.isSelected()){
+        pass.setEchoChar((char)0);}
+        else{
+        pass.setEchoChar('*');}
+    }
+}
 
 
 
@@ -77,7 +86,7 @@ private class ALsignup implements ActionListener{
         username.setBounds(260,150,220,50);
         JLabel EnterPass= new JLabel("Password:");
         EnterPass.setBounds(180, 100, 250, 250);
-        pass = new JTextField();
+        pass = new JPasswordField();
         pass.setBounds(260,200,220,50);
         Photo = new JLabel("");
         Photo.setBounds(150,100,100,100);
@@ -94,6 +103,8 @@ private class ALsignup implements ActionListener{
         signup = new JButton("Sign Up");
         signup.setBounds(400,350,220,50);
 
+        Nike = new JCheckBox("Show Password");
+        Nike.setBounds(260,250,150,50);
 
 
         //Action listener:
@@ -102,7 +113,9 @@ private class ALsignup implements ActionListener{
         ALlogin lgButton = new ALlogin();
         login.addActionListener(lgButton);
         ALsignup suButton = new ALsignup();
-        signup.addActionListener(suButton);    
+        signup.addActionListener(suButton);
+        ALnike k = new ALnike();
+        Nike.addActionListener(k);  
 
 
         
@@ -122,6 +135,7 @@ private class ALsignup implements ActionListener{
         c.add(login);
         c.add(signup);
         c.add(Photo);
+        c.add(Nike);
         //I dont know how to make with no error
 
         setLocationRelativeTo(null);
