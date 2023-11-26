@@ -10,21 +10,20 @@ public class driver {
     	hamdan.formatLists();
     	  
     	    
-    	UserClass ahmed = new UserClass("Volunteer","Ahmed","PasswordA","0544965655","ned@gmail.com","Abudhabi","10-12-2000");
-    	UserClass ahmed2 = new UserClass("Initiator","Ahmed2","PasswordA","02225","ned@gmail.com","Abudhabi","10-12-2000");
-    	UserClass ahmed3 = new UserClass("Volunteer and Initiator","Ahmed3","PasswordA","0522255","ned@gmail.com","Abudhabi","10-12-2000");
+    
+    	UserClass ahmed3 = new UserClass("Ahmed3","PasswordA","0522255","ned@gmail.com","Abudhabi","10","12","2000");
     	Initiative Donate = new Initiative("Donation","10-12-2023","5:40","theme","To-donate-to-poor");
-   	System.out.println(Donate.nameOfEvent);
-    	
-    	System.out.println(Donate);
-    	hamdan.removeInitiative(Donate);
-    	System.out.println(Donate);
+ 
     	
     	
-    	System.out.println(hamdan.viewAllInitiatives());
+    
+    	
+    	
+    	
+    	
     	//hamdan.addVolunteerToInitiative(ahmed,Donate);
     	//hamdan.removeInitiative(Donate);
-    
+    System.out.println(ahmed3.allUL);
       }
   
     }
