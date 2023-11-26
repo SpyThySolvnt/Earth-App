@@ -2,7 +2,8 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-    import java.util.*;
+import java.time.Year;
+import java.util.*;
     import javax.swing.*;
 
 
@@ -21,6 +22,7 @@ JComboBox Mon;
 JComboBox Year;
 JButton Back;
 Container c;
+UserClass noo1;
 
 
 
@@ -42,13 +44,10 @@ private class ALbox3 implements ActionListener{
 }
 private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
-        UserClass(UserN.getText(),Pass.getText(),PhoneNum.getText(),Email.getText(),Address.getText());
+         noo1 = new UserClass(UserN.getText(),Pass.getText(),PhoneNum.getText(),Email.getText(),Address.getText(),DAY.getSelectedItem().toString(),Mon.getSelectedItem().toString(),Year.getSelectedItem().toString());
 
 
 
-
-        Hamdan x = new Hamdan();
-        dispose();
     }
 }
 private class ALback implements ActionListener{
