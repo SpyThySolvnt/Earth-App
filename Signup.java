@@ -19,6 +19,7 @@ JButton Signup;
 JComboBox DAY;
 JComboBox Mon;
 JComboBox Year;
+JButton Back;
 Container c;
 
 
@@ -43,6 +44,15 @@ private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
         Hamdan x = new Hamdan();
         dispose();
+    }
+}
+private class ALback implements ActionListener{
+    public void actionPerformed(ActionEvent e){ 
+        Hamdan x = new Hamdan(); 
+        dispose();   
+        
+        
+
     }
 }
 
@@ -99,6 +109,15 @@ Signup(){
    Signup = new JButton("Sign Up");
    Signup.setBounds(200,400,100,50); 
 
+   Back = new JButton("Back");
+   Back.setBounds(0,0,100,30);
+
+
+
+
+   ALback x = new ALback();
+   Back.addActionListener(x);
+
 
    ALsignup s = new ALsignup();
    Signup.addActionListener(s);
@@ -136,6 +155,7 @@ Signup(){
     c.add(Mon);
     c.add(Year);
     c.add(Signup);
+    c.add(Back);
 }
 
 }

@@ -9,12 +9,22 @@ public class Complaint extends JFrame{
 
     JTextArea Issue; 
     JButton Submit;
+    JButton Back;
     Container c;
 
     private class ALsubmit implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
             Hamdan x = new Hamdan();    
             dispose();
+            
+
+        }
+    }
+    private class ALback implements ActionListener{
+        public void actionPerformed(ActionEvent e){ 
+            Hamdan x = new Hamdan(); 
+            dispose();   
+            
             
 
         }
@@ -47,6 +57,11 @@ public class Complaint extends JFrame{
     ALsubmit sb = new ALsubmit();
     Submit.addActionListener(sb);
 
+    Back = new JButton("Back");
+    Back.setBounds(0,0,100,30);
+    ALback s = new ALback();
+    Back.addActionListener(s);
+
 
     
 
@@ -54,6 +69,7 @@ public class Complaint extends JFrame{
     c.add(Issue);
     c.add(Submit);
     c.add(issue);
+    c.add(Back);
 
     setLocationRelativeTo(null);
 
