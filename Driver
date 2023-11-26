@@ -1,15 +1,30 @@
 import java.time.LocalDateTime;
+import java.io.*;
+import java.util.*;
 
-public class Main {
-    public static void main(String[] args) {
-        LocalDateTime now = LocalDateTime.now();
 
-        int currentyear = now.getYear();
-        int currentmonth = now.getMonthValue();
-        int currentday = now.getDayOfMonth();
-        int currenthour = now.getHour();
-        int currentminute = now.getMinute();
 
-        
-}
-}
+public class driver {
+    public static void main(String[] args) throws FileNotFoundException {
+    	Admin hamdan = new Admin("Hamdan", "1000","Hamdan123");
+    	hamdan.formatLists();
+    	  
+    	    
+    	UserClass ahmed = new UserClass("Volunteer","Ahmed","PasswordA","0544965655","ned@gmail.com","Abudhabi","10-12-2000");
+    	UserClass ahmed2 = new UserClass("Initiator","Ahmed2","PasswordA","02225","ned@gmail.com","Abudhabi","10-12-2000");
+    	UserClass ahmed3 = new UserClass("Volunteer and Initiator","Ahmed3","PasswordA","0522255","ned@gmail.com","Abudhabi","10-12-2000");
+    	Initiative Donate = new Initiative("Donation","10-12-2023","5:40","theme","To-donate-to-poor");
+   	System.out.println(Donate.nameOfEvent);
+    	
+    	System.out.println(Donate);
+    	hamdan.removeInitiative(Donate);
+    	System.out.println(Donate);
+    	
+    	
+    	System.out.println(hamdan.viewAllInitiatives());
+    	//hamdan.addVolunteerToInitiative(ahmed,Donate);
+    	//hamdan.removeInitiative(Donate);
+    
+      }
+  
+    }
