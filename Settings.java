@@ -15,6 +15,7 @@ public class Settings extends JFrame{
 
     private class ALeditinfo implements ActionListener{
         public void actionPerformed(ActionEvent e){     
+            EditInfo z = new EditInfo();
             
             
 
@@ -24,8 +25,10 @@ public class Settings extends JFrame{
 
 
     private class ALcomplaint implements ActionListener{
-        public void actionPerformed(ActionEvent e){     
-            
+        public void actionPerformed(ActionEvent e){    
+
+            Complaint x =new Complaint();
+            dispose();
             
 
         }

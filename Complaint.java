@@ -13,7 +13,7 @@ public class Complaint extends JFrame{
 
     private class ALsubmit implements ActionListener{
         public void actionPerformed(ActionEvent e){     
-            
+            dispose();
             
 
         }

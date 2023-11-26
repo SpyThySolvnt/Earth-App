@@ -20,8 +20,8 @@
 
 public static void main(String[] args){
 
-        // Hamdan x = new Hamdan(); 
-        Complaint y = new Complaint();
+         Hamdan x = new Hamdan(); 
+        
         
         }
         
@@ -43,7 +43,6 @@ private class ALadmin implements ActionListener{
 }
 private class ALlogin implements ActionListener{
     public void actionPerformed(ActionEvent e){
-        System.out.println("login");
         LoginPage z = new LoginPage();
         dispose();
 
@@ -66,18 +65,18 @@ private class ALsignup implements ActionListener{
         c = getContentPane();
         c.setLayout(null);
         
-        setSize(700,700);
+        setSize(700,500);
         setTitle("Earth App");
         JLabel EnterStuff =new JLabel("Please Write Your Login Information: ");
         EnterStuff.setBounds(0, -100, 250, 250);
         JLabel EnterName =new JLabel("UserName:");
-        EnterName.setBounds(235, 100, 250, 250);
+        EnterName.setBounds(180, 50, 250, 250);
         username = new JTextField();
-        username.setBounds(300,200,150,50);
+        username.setBounds(260,150,220,50);
         JLabel EnterPass= new JLabel("Password:");
-        EnterPass.setBounds(235, 150, 250, 250);
+        EnterPass.setBounds(180, 100, 250, 250);
         pass = new JTextField();
-        pass.setBounds(300,250,150,50);
+        pass.setBounds(260,200,220,50);
         
 
 
@@ -87,9 +86,9 @@ private class ALsignup implements ActionListener{
         admin = new JButton("Admin Login");
         admin.setBounds(550,0,150,50);
         login = new JButton("Login");
-        login.setBounds(230, 300, 220, 50);
+        login.setBounds(100, 350, 220, 50);
         signup = new JButton("Sign Up");
-        signup.setBounds(230,350,220,50);
+        signup.setBounds(400,350,220,50);
 
 
 
