@@ -1,33 +1,169 @@
+import java.util.*;
+import java.io.*;
 import java.time.LocalDateTime;
 
-import java.io.*;
-import java.util.*;
+class Initiative extends User{
+	String  nameOE, dateOE,timeOE,descriptionOE,statusOE, idOE ;
+	private int crOE;
+	boolean statusBoolean;
+	String Status;
+	 private int count;
+	    static int j;
+	    public static ArrayList<User> VolunteerList = new ArrayList<User>();
 
-public class Driver {
-    public static void main(String[] args) {
-     
+	
+	//Full Constructor
+	public Initiative(String data, String name,String nameOE,String dateOfEvent,String timeOfEvent,String descriptionOfEvent, int crOE) {
+		super(data = "",name );
+		this.nameOE=nameOE;
+		this.idOE = setIdOfEvent();
+		this.dateOE=dateOfEvent;
+		this.descriptionOE=descriptionOfEvent;
+		this.timeOE=timeOfEvent;
+		this.crOE=crOE;
+		statusBoolean = false;
+		 EventList.add(this);
+		 j++;
+	        count = j;
+	}
+	
+	public void deleteEvent() {
+		EventList.remove(count-1);
+		
+	}
+	
+	 public void editEventInfo( String nameOE, String dateOE, String timeOE , String  descriptionOE, int  crOE) {
+	    	this.nameOE = nameOE;
+	        this.idOE = setIdOfEvent(); // You need to implement this method
+	        this.dateOE= dateOE;
+	        this.timeOE = timeOE;
+	        this.descriptionOE = descriptionOE;
+	        this.crOE = crOE;
+	        EventList.add(this);
+	    	EventList.remove(count-1) ;
+	    }
+	 
+	 public void entersEvent(User o) {
+		 VolunteerList.add(o);
+		 ParticipateList.add("(Name of event: "+getNameOE()+" --> Credits gained: " +getCrOE()+")");
+		 o.cr += crOE;
+		 
+	 }
+	 public void removeFromEvent(User o) {
+		 VolunteerList.remove(count-1);
+		 o.cr -= crOE;
+	 }
+	 
+	 
+	 public String toString() {
+		 String s="";
+		 if (statusBoolean!=false)
+			 s +="---------------------------------------------------------------------------------------\n"+"Name of event: "+nameOE+
+			 "\nDate of Event: "+dateOE+"\nTime Of Event: "+timeOE
+			 + "\nDescription of Event: "+descriptionOE+"\nCredits Awarded: "+crOE+"\nParticipants: "+toString0() + "\n---------------------------------------------------------";
+		 return s;
+	 }
+	 
+	 
+	 public String toString0() {
+		 String mn ="";
+	 for (int n=0; n<VolunteerList.size();n++) 
+		  mn+= VolunteerList.get(n).getName()+", ";
+	 return mn;
+	 }
+// Method to auto create id for the event (done)
+		public String setIdOfEvent() {
+			idOE = UUID.randomUUID().toString();
+			return idOE;
+		}
 
-    	Database Database = new Database("Database");
-    	User G = new User("Database", "Ghaith","1234","0544"," 44","44 "," 44");
-    	User S = new User("Database", "Salem","1234","0544"," 44","44 "," 44");
-    	User m = new User("Database", "Kiii","1234","0544"," 44","44 "," 44");
-    	m.editUserInformation("Hamo9d","1234","0544"," 44","44 "," 44");
-    	
-    	Initiative Donate = new Initiative("","","Donation","10-11-2024","5:30","Collect money",9);
-    	Initiative Donate1 = new Initiative("","","Charity","10-11-2024","5:30","Collect money",7);
-    	
-    	// System.out.print(Database.UserList.get(0).getName());
-  //	Database.UserList.get(0).getName();
-//    	System.out.println(Database.EventList);
-    	Donate.entersEvent(G);
-    	Donate.removeFromEvent(G);
-    
-    	System.out.println(Database.EventList);
-    	System.out.println(Database.UserList);
-    	System.out.println(G.cr);
-      	System.out.println(	G.ParticipateList);
-    Donate.deleteEvent();
-    System.out.println(Database.EventList);
-    	
-}
-}
+// Method to set the Time of the event (done)
+	
+		
+		public void setDescriptionOfEvent(String m) {
+		descriptionOE = m;
+		}	
+		
+		public void setCredit(int m) {
+			credit = m;
+			}			
+// Setters end here(1)
+		
+//Getters begin here(2)
+		public String getCrOE() {
+			String s = "";
+			
+				s = Integer.toString(crOE);
+			return s;
+		}
+		public String getIdOfEvent() {
+			return idOE;
+		}
+		public String getNameOE() {
+			return nameOE;
+		}
+		public String getName1() {
+			return name;
+		}
+		public String getDateOfEvent() {
+			return dateOE;
+		}
+		public String getTimeOfEvent() {
+			return timeOE;
+		}
+		public String getDescriptionOfEvent() {
+			return descriptionOE;
+		}
+		public String getStatusOEvent() {
+			return statusOE;
+		}
+		public int getCredit() {
+			return crOE;
+		}
+		
+		// Needs admin class to be completed
+//		public String getStatus() {
+//		Status = "Pending";
+//			if (StatusBoolean & (year<currentyear | (year==currentyear&&month<currentmonth)| (year==currentyear &&month==currentmonth&&day<currentday)|  (year==currentyear &&month==currentmonth&&day==currentday&& hour<currenthour)|(year==currentyear &&month==currentmonth&&day==currentday&& hour==currenthour&& minute<currentminute)))
+//				Status = "Active";
+//				else if (StatusBoolean= false)
+//				Status = "expired";
+//					
+//			return Status;
+//		}
+//Getters end here(2)
+		// This is for initiating an event, waiting for JFrame inputs to declare them here. (40%)
+//		public void options() throws FileNotFoundException{
+//			Scanner console = new Scanner(System.in);
+//			String option;
+//				option = console.next(); // this will change to Jframe letter
+//				switch(option) {
+//				case "a":
+//				// only the input that were put in JFRame must be fixed here simple
+//				break;
+//				case "b":
+//				break;
+//				case "c":
+//				break;
+//				case "d":
+//				break;
+//				case "e":
+//				break;
+//				case "":
+//				break;
+//				case "g":
+//				break;
+//				case "h":
+//				break;
+//				}
+//			}
+
+		
+		
+		 LocalDateTime now = LocalDateTime.now();
+		   int currentyear = now.getYear();
+	       int currentmonth = now.getMonthValue();
+	       int currentday = now.getDayOfMonth();
+	       int currenthour = now.getHour();
+	       int currentminute = now.getMinute();
+	}
