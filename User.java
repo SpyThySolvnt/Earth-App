@@ -2,12 +2,11 @@ import java.io.*;
 import java.util.*;
 
 public class User extends Database{
-	protected String name;
+	public  String name;
     private String password, id, phone, email, address, dateOB ;
     private int counter;
     protected int cr;
     static int i;
-   
     public static ArrayList<String> ParticipateList = new ArrayList<String>();
     
     
@@ -52,9 +51,10 @@ public class User extends Database{
     }
 
     // Getter methods for attributes
-    public String getName() {
+    public  String getNameo() {
         return name;
     }
+    
 
     public String getId() {
         return id;
@@ -76,7 +76,7 @@ public class User extends Database{
         return address;
     }
 
-    public String getPassword() {
+    public String getPassword1() {
         return password;
     }
 
