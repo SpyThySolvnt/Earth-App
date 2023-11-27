@@ -1,4 +1,4 @@
-    import java.awt.Container;
+    import java.awt.*;
     import java.awt.GridLayout;
     import java.awt.event.ActionEvent;
     import java.awt.event.ActionListener;
@@ -9,29 +9,19 @@
         JButton login;
         JButton admin;
         JButton signup;
-        JTextField username;
-        JPasswordField pass;
+          JTextField username;
+          JPasswordField pass;
+        
         JLabel Photo;
         JCheckBox Nike; 
         Container c;
 
-        
+        public static void main(String[] args){
 
-
-
-
-public static void main(String[] args){
-
-         Hamdan x = new Hamdan(); 
-         
-        
-        
-        }
-        
-
-
-
-
+            Hamdan x = new Hamdan(); 
+           
+           }
+           
 
 
 private class ALadmin implements ActionListener{
@@ -44,17 +34,31 @@ private class ALadmin implements ActionListener{
 
     }
 }
+
+
 private class ALlogin implements ActionListener{
     public void actionPerformed(ActionEvent e){
-        if(username.getText().equals())
+
+    	 LoginPage p = new LoginPage();
+    	 dispose();
+    	
+        boolean spp = true;
+        String ddd = username.getText();
+        if(e.getSource()==login){ 
+        	if(pass.getText().equals("")||username.getText().equals("")){
+        		JOptionPane.showMessageDialog(null , "You left one or more empty fields","re-enter information",JOptionPane.PLAIN_MESSAGE); 
+        		
+        		} 
+        	else if(spp){	
+        				if ( username.getText().equals(Database.UserList.get(0).getNameo()) ) {			
+        				
+        				}
+        				}  else System.out.println(pass.getText()); dispose();
+        			
+        			}
+}}
 
 
-
-        LoginPage z = new LoginPage();
-        dispose();
-
-}
-}
 private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
         
@@ -66,9 +70,9 @@ private class ALsignup implements ActionListener{
 private class ALnike implements ActionListener{
     public void actionPerformed(ActionEvent e){
         if(Nike.isSelected()){
-        pass.setEchoChar((char)0);}
+        	((JPasswordField)pass).setEchoChar((char)0);}
         else{
-        pass.setEchoChar('*');}
+       pass.setEchoChar('*');}
     }
 }
 
