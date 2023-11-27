@@ -3,15 +3,15 @@ import java.time.LocalDateTime;
 import java.io.*;
 import java.util.*;
 
-public class Driver {
+public class Driver extends Hamdan {
     public static void main(String[] args) {
-     
+     Hamdan x = new Hamdan();
 
     	Database Database = new Database("Database");
     	User G = new User("Database", "Ghaith","1234","0544"," 44","44 "," 44");
-    	User S = new User("Database", "Salem","1234","0544"," 44","44 "," 44");
-    	User m = new User("Database", "Kiii","1234","0544"," 44","44 "," 44");
-    	m.editUserInformation("Hamo9d","1234","0544"," 44","44 "," 44");
+    	// User S = new User("Database", "Salem","1234","0544"," 44","44 "," 44");
+    	// User m = new User("Database", "Kiii","1234","0544"," 44","44 "," 44");
+    	// m.editUserInformation("Hamo9d","1234","0544"," 44","44 "," 44");
     	
     	Initiative Donate = new Initiative("","","Donation","10-11-2024","5:30","Collect money",9);
     	Initiative Donate1 = new Initiative("","","Charity","10-11-2024","5:30","Collect money",7);
@@ -19,15 +19,18 @@ public class Driver {
     	// System.out.print(Database.UserList.get(0).getName());
   //	Database.UserList.get(0).getName();
 //    	System.out.println(Database.EventList);
-    	Donate.entersEvent(G);
-    	Donate.removeFromEvent(G);
+    //	Donate.entersEvent(G);
+//    	Donate.removeFromEvent(G);
+//    
+//    	System.out.println(Database.EventList);
+//    	System.out.println(Database.UserList);
+//    	System.out.println(G.cr);
+//      	System.out.println(	G.ParticipateList);
+   
+    System.out.println(Database.UserList.get(0).getNameo());
     
-    	System.out.println(Database.EventList);
-    	System.out.println(Database.UserList);
-    	System.out.println(G.cr);
-      	System.out.println(	G.ParticipateList);
-    Donate.deleteEvent();
-    System.out.println(Database.EventList);
-    	
+    System.out.println(Database.UserList.get(0).getPassword1());
+    
+
 }
 }
