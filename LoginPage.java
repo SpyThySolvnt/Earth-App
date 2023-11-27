@@ -12,7 +12,6 @@ public class LoginPage extends JFrame{
     JButton Settings;
     JTextArea Place;
     
-    
     Container c;
 
 
