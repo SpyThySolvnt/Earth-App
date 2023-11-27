@@ -21,7 +21,7 @@ class Initiative extends User{
 		this.descriptionOE=descriptionOfEvent;
 		this.timeOE=timeOfEvent;
 		this.crOE=crOE;
-		statusBoolean = false;
+		statusBoolean = true;
 		 EventList.add(this);
 		 j++;
 	        count = j;
@@ -68,7 +68,7 @@ class Initiative extends User{
 	 public String toString0() {
 		 String mn ="";
 	 for (int n=0; n<VolunteerList.size();n++) 
-		  mn+= VolunteerList.get(n).getName()+", ";
+		  mn+= VolunteerList.get(n).getNameo()+", ";
 	 return mn;
 	 }
 // Method to auto create id for the event (done)
@@ -84,9 +84,7 @@ class Initiative extends User{
 		descriptionOE = m;
 		}	
 		
-		public void setCredit(int m) {
-			credit = m;
-			}			
+			
 // Setters end here(1)
 		
 //Getters begin here(2)
