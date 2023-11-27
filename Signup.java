@@ -1,10 +1,10 @@
-    import java.awt.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.time.Year;
-import java.util.*;
+    import java.util.*;
     import javax.swing.*;
+    
 
 
 
@@ -22,7 +22,6 @@ JComboBox Mon;
 JComboBox Year;
 JButton Back;
 Container c;
-UserClass noo1;
 
 
 
@@ -44,19 +43,41 @@ private class ALbox3 implements ActionListener{
 }
 private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
-         noo1 = new UserClass(UserN.getText(),Pass.getText(),PhoneNum.getText(),Email.getText(),Address.getText(),DAY.getSelectedItem().toString(),Mon.getSelectedItem().toString(),Year.getSelectedItem().toString());
+        Hamdan x = new Hamdan();
+        dispose();
+        
+        
+        
 
-
-
+        if(e.getSource()==Signup) {
+        int jtxtnum = PhoneNum.getText().length();
+        if(jtxtnum<10 || jtxtnum>10) {
+    
+     	   JOptionPane.showMessageDialog(null,"The Phone number must contain 10 numbers exactly ","error",JOptionPane.ERROR_MESSAGE);
+     }
+        
+        String jtxtemail = Email.getText();
+        if (jtxtemail.contains("@")) {
+        System.out.println("");
+        }   
+        else {
+     	   JOptionPane.showMessageDialog(null,"The email address must contain an @ symbol","error",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+        if(e.getSource()==Signup) {
+        	if(UserN.getText().equals("")||Pass.getText().equals("")||PhoneNum.getText().equals("")||Email.getText().equals("")||Address.getText().equals("")){
+        		JOptionPane.showMessageDialog(null , "You left one or more empty fields","re-enter information",JOptionPane.PLAIN_MESSAGE); 
+        		}
+    } 
+        }
     }
 }
+
 private class ALback implements ActionListener{
     public void actionPerformed(ActionEvent e){ 
         Hamdan x = new Hamdan(); 
         dispose();   
-        
-        
-
     }
 }
 
@@ -134,6 +155,10 @@ Signup(){
    Mon.addActionListener(MONTH); 
    ALbox3 YEAR = new ALbox3();
    Year.addActionListener(YEAR); 
+   
+  
+  
+  
 
    //ALadmin adButton = new ALadmin();
    //admin.addActionListener(adButton);
