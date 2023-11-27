@@ -55,15 +55,6 @@ public class LoginPage extends JFrame{
     
     JLabel initiative = new JLabel ("Welcome to the Earth App Here you can Volunteer and Create Initiative to help save the world bit by bit!");
     initiative.setBounds(150,0,600,150);
-
-    
-
-
-    
-
-
-
-
     //buttons
 
     Initiative = new JButton("Create An Initiative");
