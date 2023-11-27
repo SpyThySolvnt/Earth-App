@@ -22,31 +22,23 @@ public class Admin  {
     public String getPassword() {
         return password;
     }
-
+    //2.
     public boolean login(String enteredPassword) {
         return password.equals(enteredPassword);
     }
 
-    // High-level operations for managing initiatives
+    // 4.Approve 
     public void processInitiative(Initiative initiative, boolean approve) {
         if (initiative != null) {
             initiative.StatusBoolean = approve;
         }
     }
+    //
     public void addInitiative(Initiative x) {
         x.Status="Active";
     }
 
-    public void editInitiative(Initiative initiative) {
-        // Implementation to edit an existing initiative by the user
-    }
-    public void registerForInitiative(Initiative initiative) {
-        // Implementation to register the user for a volunteering initiative
-    }
 
-    public void withdrawFromInitiative(Initiative initiative) {
-        // Implementation to withdraw the user from a volunteering initiative
-    }
 
 
     public void VolunteerList() throws FileNotFoundException {
@@ -55,7 +47,7 @@ public class Admin  {
  	// needs to print the credits and other details, not done
  	// Implementation to generate a report of the user's volunteering history and points
   }
-    
+   //+5remove  
     public void removeInitiative(Initiative initiative)throws FileNotFoundException {
     	
     	 PrintWriter foutInitiativeBan = new PrintWriter(new FileOutputStream(new File("C:\\Users\\3R\\Desktop\\FileOfBannedInitiative.txt"),true));
@@ -70,7 +62,7 @@ public class Admin  {
     	    	initiative.setDateOfEvent("");
     	    	initiative.setDescriptionOfEvent("");
     }
-
+//+6
     public String viewAllInitiatives() throws FileNotFoundException {
     	String s = "" ;
     	String n = "";
