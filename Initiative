@@ -1,191 +1,33 @@
-import java.util.*;
+import java.time.LocalDateTime;
 
 import java.io.*;
-import java.time.LocalDateTime;
-class Initiative {
-	String  dateOfEvent,timeOfEvent,descriptionOfEvent,statusOfEvent;
-	String idOfEvent, placeOfEvent,themeOfEvent;
-	int hour,minute,day,month,year;
-	int credit;
-	boolean StatusBoolean;
-	String Status;
-	String nameOfEvent;
-	String id;
-	 protected  static ArrayList<UserClass> allUL = new ArrayList<>();
-	  
-	 LocalDateTime now = LocalDateTime.now();
-       int currentyear = now.getYear();
-       int currentmonth = now.getMonthValue();
-       int currentday = now.getDayOfMonth();
-       int currenthour = now.getHour();
-       int currentminute = now.getMinute();
-       
-       public String toString() {
-	        return  nameOfEvent +" (Status:"+Status+
-	        		")(Theme-Of-The-Event:" + themeOfEvent+
-	                ")(Date-Of-The-Event:" + dateOfEvent + ")(" +
-	                "Time-Of-The-Event:" + timeOfEvent + ")(" +
-	                "Description-Of-The-Event:" + descriptionOfEvent + ")";
-	                
-	    }
-       
-   	PrintWriter foutInitiative = new PrintWriter(new FileOutputStream(new File("C:\\Users\\3R\\Desktop\\FileOfInitiative.txt"),true));
+import java.util.*;
 
-	//Full Constructor
-	public Initiative(String nameOfEvent,String dateOfEvent,String timeOfEvent, String themeOfEvent, String descriptionOfEvent) throws FileNotFoundException{
-		this.nameOfEvent = nameOfEvent;
-		this.themeOfEvent = themeOfEvent;
-		this.idOfEvent = setIdOfEvent();
-		this.dateOfEvent=dateOfEvent;
-		this.descriptionOfEvent=descriptionOfEvent;
-		this.timeOfEvent=timeOfEvent;
-		foutInitiative.println(this + "\n");
-		foutInitiative.close();
-		Status = "Pending";
-	}
-// Setters begin here(1)
-// Method to auto create id for the event (done)
-		public String setIdOfEvent() {
-			idOfEvent = UUID.randomUUID().toString();
-			return idOfEvent;
-		}
-		
-// Method to set the Time of the event (done)
-		public void setTimeOfEvent(int hour, int minute) {
-			if(0<= hour&&hour<24)
-			this.hour=hour;
-			else
-			this.hour=0;
-			
-			if(0<=minute&&minute<60)
-			this.minute=minute;
-			else
-			minute = 0;
-			
-		if(this.hour<10 &&this.minute<10) 	
-			timeOfEvent ="0"+ this.hour+":0"+this.minute;
-		if(this.hour>=10 &&this.minute<10) 	
-			timeOfEvent = this.hour+":0"+this.minute;
-		if(this.hour<10 &&this.minute>=10) 	
-			timeOfEvent ="0"+ this.hour+":"+this.minute;
-		if(this.hour>=10 &&this.minute>=10) 	
-			timeOfEvent =+ this.hour+":"+this.minute;
-		}
-		
-		public void setDescriptionOfEvent(String m) {
-		descriptionOfEvent = m;
-		}	
-		
-		public void setCredit(int m) {
-			credit = m;
-			}			
-// Setters end here(1)
-		
-//Getters begin here(2)
-		public String getIdOfEvent() {
-			return idOfEvent;
-		}
-		public String getDateOfEvent() {
-			return dateOfEvent;
-		}
-		public String getTimeOfEvent() {
-			return timeOfEvent;
-		}
-		public String getDescriptionOfEvent() {
-			return descriptionOfEvent;
-		}
-		public String getStatus1() {
-			return Status;
-		}
-		public int getCredit() {
-			return credit;
-		}
-		public String getNameOfEvent() {
-			return nameOfEvent;
-		}
-		public void setNameOfEvent(String d) {
-			nameOfEvent=d ;
-		}
-		public void setIdOfEvent(String d) {
-			idOfEvent=d ;
-		}
-		public void setDesciptionOfEvent(String d) {
-			descriptionOfEvent=d ;
-		}
-		public void setStatusOfEvent(String d) {
-			statusOfEvent=d ;
-		}
-		public void setThemeOfEvent(String d) {
-			themeOfEvent=d ;
-		}
-		public void setDateOfEvent(String d) {
-			dateOfEvent=d ;
-		}
-		public void setTimeOfEvent(String d) {
-			timeOfEvent=d ;
-		}
-		public void setStatus(String d) {
-			Status=d ;
-		}
-		
-		
-		// Needs admin class to be completed
-		public String getStatus() {
-		Status = "Pending";
-			if (StatusBoolean & (year<currentyear | (year==currentyear&&month<currentmonth)| (year==currentyear &&month==currentmonth&&day<currentday)|  (year==currentyear &&month==currentmonth&&day==currentday&& hour<currenthour)|(year==currentyear &&month==currentmonth&&day==currentday&& hour==currenthour&& minute<currentminute)))
-				Status = "Active";
-				else if (StatusBoolean= false)
-				Status = "expired";
-					
-			return Status;
-		}
-		
-		public void setDateOfEvent(int day,int month,int year) {
-			if(0< day && day<=31)
-						this.day=day;
-						else
-						this.day=-1;
-					
-				if(0<month&&month<12)
-						this.month=month;
-						else
-						month = -1;
-						
-				if(2023<year&&year<2030)
-							this.year=year;
-							else
-							month = -1;
-						
-				if (this.day == -1 || this.month == -1 || this.year == -1)
-						System.out.println("Invalid Date");
-					else
-						dateOfEvent = this.day+"/"+this.month+"/"+this.year;
-				}	
-//Getters end here(2)
-		// This is for initiating an event, waiting for JFrame inputs to declare them here. (40%)
-		public void options() throws FileNotFoundException{
-			Scanner console = new Scanner(System.in);
-			String option;
-				option = console.next(); // this will change to Jframe letter
-				switch(option) {
-				case "a":
-				// only the input that were put in JFRame must be fixed here simple
-				break;
-				case "b":
-				break;
-				case "c":
-				break;
-				case "d":
-				break;
-				case "e":
-				break;
-				case "":
-				break;
-				case "g":
-				break;
-				case "h":
-				break;
-				}
-			}
+public class Driver {
+    public static void main(String[] args) {
+     
 
-	}
+    	Database Database = new Database("Database");
+    	User G = new User("Database", "Ghaith","1234","0544"," 44","44 "," 44");
+    	User S = new User("Database", "Salem","1234","0544"," 44","44 "," 44");
+    	User m = new User("Database", "Kiii","1234","0544"," 44","44 "," 44");
+    	m.editUserInformation("Hamo9d","1234","0544"," 44","44 "," 44");
+    	
+    	Initiative Donate = new Initiative("","","Donation","10-11-2024","5:30","Collect money",9);
+    	Initiative Donate1 = new Initiative("","","Charity","10-11-2024","5:30","Collect money",7);
+    	
+    	// System.out.print(Database.UserList.get(0).getName());
+  //	Database.UserList.get(0).getName();
+//    	System.out.println(Database.EventList);
+    	Donate.entersEvent(G);
+    	Donate.removeFromEvent(G);
+    
+    	System.out.println(Database.EventList);
+    	System.out.println(Database.UserList);
+    	System.out.println(G.cr);
+      	System.out.println(	G.ParticipateList);
+    Donate.deleteEvent();
+    System.out.println(Database.EventList);
+    	
+}
+}
