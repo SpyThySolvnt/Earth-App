@@ -1,29 +1,33 @@
 import java.time.LocalDateTime;
+
 import java.io.*;
 import java.util.*;
 
+public class Driver {
+    public static void main(String[] args) {
+     
 
-
-public class driver {
-    public static void main(String[] args) throws FileNotFoundException {
-    	Admin hamdan = new Admin("Hamdan", "1000","Hamdan123");
-    	hamdan.formatLists();
-    	  
-    	    
+    	Database Database = new Database("Database");
+    	User G = new User("Database", "Ghaith","1234","0544"," 44","44 "," 44");
+    	User S = new User("Database", "Salem","1234","0544"," 44","44 "," 44");
+    	User m = new User("Database", "Kiii","1234","0544"," 44","44 "," 44");
+    	m.editUserInformation("Hamo9d","1234","0544"," 44","44 "," 44");
+    	
+    	Initiative Donate = new Initiative("","","Donation","10-11-2024","5:30","Collect money",9);
+    	Initiative Donate1 = new Initiative("","","Charity","10-11-2024","5:30","Collect money",7);
+    	
+    	// System.out.print(Database.UserList.get(0).getName());
+  //	Database.UserList.get(0).getName();
+//    	System.out.println(Database.EventList);
+    	Donate.entersEvent(G);
+    	Donate.removeFromEvent(G);
     
-    	UserClass ahmed3 = new UserClass("Ahmed3","PasswordA","0522255","ned@gmail.com","Abudhabi","10","12","2000");
-    	Initiative Donate = new Initiative("Donation","10-12-2023","5:40","theme","To-donate-to-poor");
- 
+    	System.out.println(Database.EventList);
+    	System.out.println(Database.UserList);
+    	System.out.println(G.cr);
+      	System.out.println(	G.ParticipateList);
+    Donate.deleteEvent();
+    System.out.println(Database.EventList);
     	
-    	
-    
-    	
-    	
-    	
-    	
-    	//hamdan.addVolunteerToInitiative(ahmed,Donate);
-    	//hamdan.removeInitiative(Donate);
-    System.out.println(ahmed3.allUL);
-      }
-  
-    }
+}
+}
