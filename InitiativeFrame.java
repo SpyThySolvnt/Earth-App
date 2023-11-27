@@ -19,7 +19,7 @@ public class InitiativeFrame extends JFrame{
 
     private class ALsubmit implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
-            Hamdan x = new Hamdan(); 
+        	  Hamdan x = new Hamdan(); 
             dispose();   
             
             
