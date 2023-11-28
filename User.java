@@ -1,25 +1,28 @@
 import java.io.*;
 import java.util.*;
 
-public class User extends Database{
+public class User extends Database  {
+	public String s;
 	public  String name;
+	public String name1;
     private String password, id, phone, email, address, dateOB ;
     private int counter;
     protected int cr;
     static int i;
     public static ArrayList<String> ParticipateList = new ArrayList<String>();
+    public static ArrayList<User> VolunteerList = new ArrayList<User>();
+   
     
-    
-    public User(String data, String name) {
-    	super(data);
-    	this.name = name;
+    public User(String d, String s) {
+    	super(d);
+    	this.s = name1;
     	
     }
     
-    
+
     // Constructor (100%)
     public User(String s,String name, String password, String phone, String email , String  address, String  dateOB) {
-    	super(s="");
+    	super(s);
     	this.name = name;
         this.id = generateUserId(); // You need to implement this method
         this.email = email;
@@ -32,9 +35,9 @@ public class User extends Database{
         counter = i;
     }
     
-    //edit personal info by user (100%)
-    public void editUserInformation(String name, String password, String phone, String email , String  address, String  dateOB) {
-    
+
+    public void editUserInformation(String s, String name, String password, String phone, String email , String  address, String  dateOB) {
+    this.s=s;
     	this.name = name;
         this.id = generateUserId(); // You need to implement this method
         this.email = email;
@@ -47,8 +50,13 @@ public class User extends Database{
     }
     
     public String toString() {
-    return name+" "+password+" "+phone+" "+cr+" ";
+    return name+" "+password+" "+phone+" ";
     }
+    
+    public String toStringInitiatorView() {
+        return "Name: "+name+" Phone: "+phone+" Email: "+email+" Date Of Birth: "+dateOB+" Total Credits: "+cr;
+        }
+
 
     // Getter methods for attributes
     public  String getNameo() {
