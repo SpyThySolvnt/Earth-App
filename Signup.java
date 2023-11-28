@@ -8,7 +8,7 @@ import java.io.*;
 
 
 
-public class Signup extends JFrame{
+public class Signup extends JFrame {
 
 
 JTextField UserN;
@@ -26,8 +26,8 @@ Container c;
 
 
 
-private class ALbox1 implements ActionListener{
-    public void actionPerformed(ActionEvent e){
+private class ALbox1 implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
         
     }
 }
@@ -41,8 +41,8 @@ private class ALbox3 implements ActionListener{
         
     }
 }
-private class ALsignup implements ActionListener{
-    public void actionPerformed(ActionEvent e){
+private class ALsignup implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
     	
         Hamdan x = new Hamdan();
         dispose();
@@ -76,15 +76,35 @@ private class ALsignup implements ActionListener{
         		} else ful = true;
         	 	
     } 
-        if (ten && ema && ful) {
-           	 User signup = new User("", UserN.getText(), Pass.getText() ,PhoneNum.getText() ,Email.getText() ,Address.getText()  , " " );
-        	 System.out.println(Database.UserList);
+        if (ten && ema && ful)  {
+           	 User signup1 = new User("", UserN.getText(), Pass.getText() ,PhoneNum.getText() ,Email.getText() ,Address.getText()  , " " );
+             try {
+                 // Set the second parameter of FileWriter to true for append mode
+                 FileWriter fileWriter = new FileWriter("C:\\Users\\3R\\Desktop\\UserPass.txt", true);
+
+                 // Wrap the FileWriter in a PrintWriter for convenient writing
+                 PrintWriter printWriter = new PrintWriter(fileWriter);
+
+                 // Write to the file
+                 printWriter.println("Database " +UserN.getText()+" "+Pass.getText()+" "+ PhoneNum.getText()+" "+ Email.getText()+""+ Address.getText() + " "+ DAY.getSelectedItem()+"-"+Mon.getSelectedItem()+"-"+Year.getSelectedItem() );
+              
+                 // Close the resources
+                 printWriter.close();
+                 fileWriter.close();
+
+                 System.out.println("Data written to the file successfully.");
+
+             } catch (IOException n) {
+                 n.printStackTrace();
+             }
         }
-        	
         }
-        
     }
 }
+        
+        
+    
+
 
 private class ALback implements ActionListener{
     public void actionPerformed(ActionEvent e){ 
@@ -201,5 +221,5 @@ Signup(){
     c.add(Signup);
     c.add(Back);
 }
+    }
 
-}
