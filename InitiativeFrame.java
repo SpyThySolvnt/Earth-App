@@ -28,6 +28,7 @@ public class InitiativeFrame extends JFrame{
     }
     private class ALback implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
+        	
             Hamdan x = new Hamdan(); 
             dispose();   
             
