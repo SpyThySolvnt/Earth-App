@@ -43,27 +43,22 @@ private class ALbox3 implements ActionListener{
 }
 private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
-    	
         Hamdan x = new Hamdan();
         dispose();
         
-        boolean ten, ful ,ema;
-        ten = false;
-        ful = false;
-        ema = false;
+        
+        
 
-        
-        
         if(e.getSource()==Signup) {
         int jtxtnum = PhoneNum.getText().length();
         if(jtxtnum<10 || jtxtnum>10) {
+    
      	   JOptionPane.showMessageDialog(null,"The Phone number must contain 10 numbers exactly ","error",JOptionPane.ERROR_MESSAGE);
-     } else ten = true;
+     }
         
         String jtxtemail = Email.getText();
         if (jtxtemail.contains("@")) {
-        System.out.println(""); 
-        ema = true;
+        System.out.println("");
         }   
         else {
      	   JOptionPane.showMessageDialog(null,"The email address must contain an @ symbol","error",JOptionPane.ERROR_MESSAGE);
@@ -73,16 +68,9 @@ private class ALsignup implements ActionListener{
         if(e.getSource()==Signup) {
         	if(UserN.getText().equals("")||Pass.getText().equals("")||PhoneNum.getText().equals("")||Email.getText().equals("")||Address.getText().equals("")){
         		JOptionPane.showMessageDialog(null , "You left one or more empty fields","re-enter information",JOptionPane.PLAIN_MESSAGE); 
-        		} else ful = true;
-        	 	
+        		}
     } 
-        if (ten && ema && ful) {
-           	 User signup = new User("", UserN.getText(), Pass.getText() ,PhoneNum.getText() ,Email.getText() ,Address.getText()  , " " );
-        	 System.out.println(Database.UserList);
         }
-        	
-        }
-        
     }
 }
 
@@ -108,14 +96,11 @@ Signup(){
    setSize(500,500);
    setTitle("Sign Up");
 
-   
-   String[] Day = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
-   String[] Month = {"January","Febuary","March","April","May","June","July","August","October","November","December"};
-   String[] Years = {"1960" ,"1961" ,"1962" ,"1963" ,"1964" ,"1965" ,"1966" ,"1967","1968" ,"1969" ,"1970","1971" ,"1972" ,"1973" ,"1974" ,"1975","1976" ,"1977" ,"1978" ,"1979" ,"1980" ,"1981" ,"1982" ,"1983" ,"1984" ,"1985" ,"1986" ,"1987" ,"1988" ,"1989" ,"1990" ,"1991" ,"1992" ,"1993" ,"1994" ,"1995" ,"1996" ,"1997" ,"1998" ,"1999" ,"2000" ,"2001" ,"2002" ,"2003" ,"2004" ,"2005" ,"2006" ,"2007" ,"2008" ,"2009" 
-		    ,"2010" ,"2011" ,"2012" ,"2013" ,"2014" ,"2015" ,"2016" ,"2017" ,"2018" ,"2019" ,"2020" ,"2021" ,"2022" ,"2023"} ;
 
-   
-   
+   Integer[] Day = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
+   String[] Month = {"January","Febuary","March","April","May","June","July","August","October","November","December"};
+   Integer[] Years = {1960 ,1961 ,1962 ,1963 ,1964 ,1965 ,1966 ,1967 ,1968 ,1969 ,1970 ,1971 ,1972 ,1973 ,1974 ,1975 ,1976 ,1977 ,1978 ,1979 ,1980 ,1981 ,1982 ,1983 ,1984 ,1985 ,1986 ,1987 ,1988 ,1989 ,1990 ,1991 ,1992 ,1993 ,1994 ,1995 ,1996 ,1997 ,1998 ,1999 ,2000 ,2001 ,2002 ,2003 ,2004 ,2005 ,2006 ,2007 ,2008 ,2009 
+    ,2010 ,2011 ,2012 ,2013 ,2014 ,2015 ,2016 ,2017 ,2018 ,2019 ,2020 ,2021 ,2022 ,2023} ;
    JLabel username = new JLabel("User Name:");
     username.setBounds(80,60,200,50);
     UserN = new JTextField();
@@ -203,3 +188,9 @@ Signup(){
 }
 
 }
+
+
+
+
+
+
