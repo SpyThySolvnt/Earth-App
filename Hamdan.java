@@ -4,7 +4,7 @@
     import java.util.*;
     import javax.swing.*;
     
-    public class Hamdan extends JFrame{
+    public class Hamdan extends JFrame {
         JButton login;
         JButton admin;
         JButton signup;
@@ -14,11 +14,13 @@
         JLabel Photo;
 
 
-public static void main(String[] args){
+public static void main(String[] args) throws IOException {
 
          Hamdan x = new Hamdan(); 
-  
-        }
+       
+     }
+ 
+        
 
 
 private class ALadmin implements ActionListener{
@@ -31,24 +33,31 @@ private class ALadmin implements ActionListener{
 }
 
 private class ALlogin implements ActionListener{
-    public void actionPerformed(ActionEvent e){
-        LoginPage z = new LoginPage();
-        dispose();
+    public void actionPerformed(ActionEvent e)  {
+      
 
         
         if(e.getSource()==login){
         	if(pass.getText().equals("")||username.getText().equals("")){
         		JOptionPane.showMessageDialog(null , "You left one or more empty fields","re-enter information",JOptionPane.PLAIN_MESSAGE); 
-        		} else if (username.getText().equals("admin")||pass.getText().equals(Database.UserList.get(0).getText())){
-            		JOptionPane.showMessageDialog(null , "Welcome Back Admin",null,JOptionPane.PLAIN_MESSAGE); 
-            		AdminPage x = new AdminPage();
-                    dispose();
+        		} 
+        	else for(int vr = 0; vr < Database.UserList.size();vr++) {
+        		if ( username.getText().equals(Database.UserList.get(vr).getNameo()) && pass.getText().equals(Database.UserList.get(vr).getPassword1())) {
+        			dispose(); 
+        			LoginPage x = new LoginPage();
+                    
+                	break;
+
+        	}
+        		} 
+     
         }
 }
 }
 
-private class ALsignup implements ActionListener{
-    public void actionPerformed(ActionEvent e){
+
+private class ALsignup implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
         Signup x = new Signup();
         signup.setEnabled(false);
         dispose();
@@ -122,6 +131,7 @@ private class ALsignup implements ActionListener{
 
         setLocationRelativeTo(null);
         }
-        }
+}
+        
 
     
