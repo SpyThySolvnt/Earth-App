@@ -1,27 +1,24 @@
     import java.awt.*;
-    import java.awt.GridLayout;
-    import java.awt.event.ActionEvent;
-    import java.awt.event.ActionListener;
+    import java.awt.event.*;
     import java.io.*;
     import java.util.*;
     import javax.swing.*;
+    
     public class Hamdan extends JFrame{
         JButton login;
         JButton admin;
         JButton signup;
-          JTextField username;
-          JPasswordField pass;
-        
-        JLabel Photo;
-        JCheckBox Nike; 
+        JTextField username;
+        JTextField pass;
         Container c;
+        JLabel Photo;
 
-        public static void main(String[] args){
 
-            Hamdan x = new Hamdan(); 
-           
-           }
-           
+public static void main(String[] args){
+
+         Hamdan x = new Hamdan(); 
+  
+        }
 
 
 private class ALadmin implements ActionListener{
@@ -29,54 +26,35 @@ private class ALadmin implements ActionListener{
             admin.setEnabled(false);
             AdminFrame y = new AdminFrame();
             dispose();
-            
-            
-
+    
     }
 }
 
-
 private class ALlogin implements ActionListener{
     public void actionPerformed(ActionEvent e){
+        LoginPage z = new LoginPage();
+        dispose();
 
-    	 LoginPage p = new LoginPage();
-    	 dispose();
-    	
-        boolean spp = true;
-        String ddd = username.getText();
-        if(e.getSource()==login){ 
+        
+        if(e.getSource()==login){
         	if(pass.getText().equals("")||username.getText().equals("")){
         		JOptionPane.showMessageDialog(null , "You left one or more empty fields","re-enter information",JOptionPane.PLAIN_MESSAGE); 
-        		
-        		} 
-        	else if(spp){	
-        				if ( username.getText().equals(Database.UserList.get(0).getNameo()) ) {			
-        				
-        				}
-        				}  else System.out.println(pass.getText()); dispose();
-        			
-        			}
-}}
-
+        		} else if (username.getText().equals("admin")||pass.getText().equals(Database.UserList.get(0).getText())){
+            		JOptionPane.showMessageDialog(null , "Welcome Back Admin",null,JOptionPane.PLAIN_MESSAGE); 
+            		AdminPage x = new AdminPage();
+                    dispose();
+        }
+}
+}
 
 private class ALsignup implements ActionListener{
     public void actionPerformed(ActionEvent e){
-        
         Signup x = new Signup();
         signup.setEnabled(false);
         dispose();
     }
 }
-private class ALnike implements ActionListener{
-    public void actionPerformed(ActionEvent e){
-        if(Nike.isSelected()){
-        	((JPasswordField)pass).setEchoChar((char)0);}
-        else{
-       pass.setEchoChar('*');}
-    }
-}
-
-
+    
 
 //web thingy
         Hamdan(){
@@ -95,7 +73,7 @@ private class ALnike implements ActionListener{
         username.setBounds(260,150,220,50);
         JLabel EnterPass= new JLabel("Password:");
         EnterPass.setBounds(180, 100, 250, 250);
-        pass = new JPasswordField();
+        pass = new JTextField();
         pass.setBounds(260,200,220,50);
         Photo = new JLabel("");
         Photo.setBounds(150,100,100,100);
@@ -112,8 +90,6 @@ private class ALnike implements ActionListener{
         signup = new JButton("Sign Up");
         signup.setBounds(400,350,220,50);
 
-        Nike = new JCheckBox("Show Password");
-        Nike.setBounds(260,250,150,50);
 
 
         //Action listener:
@@ -122,9 +98,7 @@ private class ALnike implements ActionListener{
         ALlogin lgButton = new ALlogin();
         login.addActionListener(lgButton);
         ALsignup suButton = new ALsignup();
-        signup.addActionListener(suButton);
-        ALnike k = new ALnike();
-        Nike.addActionListener(k);  
+        signup.addActionListener(suButton);    
 
 
         
@@ -144,10 +118,10 @@ private class ALnike implements ActionListener{
         c.add(login);
         c.add(signup);
         c.add(Photo);
-        c.add(Nike);
         //I dont know how to make with no error
 
         setLocationRelativeTo(null);
-
         }
-    }
+        }
+
+    
