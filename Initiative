@@ -9,7 +9,7 @@ class Initiative extends User{
 	String Status;
 	 private int count;
 	    static int j;
-	    public static ArrayList<User> VolunteerList = new ArrayList<User>();
+	   
 
 	
 	//Full Constructor
@@ -43,8 +43,8 @@ class Initiative extends User{
 	    	EventList.remove(count-1) ;
 	    }
 	 
-	 public void entersEvent(User o) {
-		 VolunteerList.add(o);
+	 public void entersEvent(Initiative o) {
+		 VolunteerList.add(this);
 		 ParticipateList.add("(Name of event: "+getNameOE()+" --> Credits gained: " +getCrOE()+")");
 		 o.cr += crOE;
 		 
@@ -156,8 +156,7 @@ class Initiative extends User{
 //				}
 //			}
 
-		
-		
+
 		 LocalDateTime now = LocalDateTime.now();
 		   int currentyear = now.getYear();
 	       int currentmonth = now.getMonthValue();
