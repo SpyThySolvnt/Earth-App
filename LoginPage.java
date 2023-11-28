@@ -12,6 +12,8 @@ public class LoginPage extends JFrame{
     JButton Settings;
     JButton volunteer;
     JTextArea Place;
+    JButton Back;
+    
     
     Container c;
 
@@ -44,7 +46,12 @@ public class LoginPage extends JFrame{
     }
     
 
-
+    private class ALback implements ActionListener{
+        public void actionPerformed(ActionEvent e){ 
+            Hamdan x = new Hamdan(); 
+            dispose();   
+        }
+    }
 
 
 
@@ -83,6 +90,9 @@ public class LoginPage extends JFrame{
     volunteer = new JButton("VOLUNTEER");
     volunteer.setBounds(300,550,300,30);
     
+    Back = new JButton("Back");
+    Back.setBounds(0,0,100,30);
+    
     
     
     ALinitiative Ini = new ALinitiative();
@@ -98,6 +108,7 @@ public class LoginPage extends JFrame{
     c.add(Settings);
     c.add(Initiative);
     c.add(volunteer);
+    c.add(Back);
 
 
 
