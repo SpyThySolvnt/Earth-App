@@ -15,8 +15,9 @@ public class LoginPage extends JFrame{
     JTextArea Place;
     JButton Back;
     JTable x;
+   
     
-    
+    public static String row [][] = {{}} ;
     Container c;
 
 
@@ -119,26 +120,20 @@ public class LoginPage extends JFrame{
 
 
 
+    Vector rows = new Vector();
+    Vector columns = new Vector();
+    
 
 
     //Jtable 
-    String column [] = {"Counter","ID "," Initiative","Description","Credit Hour","Time","Date"};
+    // columns  = {"Counter","Initiator "," Initiative","Description","Credit Hour","Time","Date"};
+    
+ 
+	
 
-    String row [][] = {{"Dino1", "Dino2","Dino3","Dino4","Dino 5","Dino6","Dino7"},
-                        {"Bear 1", "Bear2","Bear3","Bear4","Bear 5","Bear6","Bear7"},
-                    {"Moose 1", "Moose2","Moose3","Moose4","Moose 5","Moose6","Moose7"},
-                    {"Rabbit 1", "Rabbit2","Rabbit3","Rabbit4","Rabbit 5","Rabbit 6","Rabbit 7"},
-                    {"dog 1", "dog2","dog3","dog4","dog 5","dog6","dog 7"},
-                    {"cat 1", "cat 2","cat3","cat4","cat 5","cat 6","cat 7"},
-                    {"wolf 1", "wolf2","wolf3","wolf4","wolf 5","wolf 6","wolf 7"},
-                
-                
-                
-                
-                };
+  
 
-
-DefaultTableModel model = new DefaultTableModel( row,  column) {
+DefaultTableModel model = new DefaultTableModel( rows , columns ) {
 
 
 public boolean isCellEditable(int row, int column) {
@@ -153,9 +148,10 @@ public boolean isCellEditable(int row, int column) {
     y.setBounds(200,200,500,100);
     x.getTableHeader().setReorderingAllowed(false);
     x.getTableHeader().setResizingAllowed(false);
-
- 
-    //adding assests
+    
+   rows.add(Database.EventList.get(1).getNameOE());
+   System.out.print(rows);
+  //adding assests
     c.add(initiative);
     c.add(Settings);
     c.add(Initiative);
