@@ -22,15 +22,48 @@ public class InitiativeFrame extends JFrame{
 
 
 
+
     private class ALsubmit implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
-        	  Hamdan x = new Hamdan(); 
-            dispose();   
-            
-            
+       boolean twe = false;
+        	   
+            if(e.getSource()==Submit) {
+            	if(Theme.getText().equals("")||Description.getText().equals("")){
+            		JOptionPane.showMessageDialog(null , "You left one or more empty fields","re-enter information",JOptionPane.PLAIN_MESSAGE); 
+            	} else { 
+            			Initiative mk = new Initiative(" ", " ", Theme.getText(), Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem(), Time.getSelectedItem().toString() , Description.getText(), " ") ;
+                    	LoginPage x = new LoginPage(); 
+                        dispose();   
+                        System.out.println(Database.EventList);
+                        twe = true;
+                     
+            	}
+            }
+                        
+          if (twe) {
+        	  try {
+                         FileWriter fileWriter1 = new FileWriter("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\IniLIST.txt", true);
 
-        }
-    }
+                         PrintWriter printWriter1 = new PrintWriter(fileWriter1);
+Scanner sss = new Scanner(new FileReader("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\Currentuser.txt"));
+                         printWriter1.println("Event: "+ sss.next() +" " +Theme.getText()+" "+ Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem()+" "+ Time.getSelectedItem().toString() +" "+ Description.getText() + " " +"1"  );
+        
+                         printWriter1.close();
+                         fileWriter1.close();
+
+                         System.out.println("D1111.");
+
+                         
+                         
+                         
+                         
+                     } catch (IOException an) {
+                         an.printStackTrace();
+                     }
+                }
+    }}
+        
+
     private class ALback implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
         	
