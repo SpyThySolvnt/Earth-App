@@ -18,7 +18,7 @@ public class InitiativeFrame extends JFrame{
     JComboBox Time;
     JComboBox CreditHour;
     
-
+//
 
 
 
