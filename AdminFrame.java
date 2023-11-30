@@ -90,6 +90,8 @@ public class AdminFrame extends JFrame{
         
         ALback s = new ALback();
         Back.addActionListener(s);
+
+
         
       
 

@@ -14,11 +14,13 @@
         JLabel Photo;
 
 
-public static void main(String[] args) throws IOException {
+// public static void main(String[] args) throws IOException {
 
-         Hamdan x = new Hamdan(); 
+//          Hamdan x = new Hamdan();
+//         // AdminPage x = new AdminPage(); 
+         
        
-     }
+//     }
  
         
 

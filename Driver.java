@@ -3,13 +3,13 @@ import java.time.LocalDateTime;
 import java.io.*;
 import java.util.*;
 
-public class Driver extends Hamdan {
+public class Driver{
     public static void main(String[] args) throws IOException {
     
     	Database Database = new Database("Database");
     	
     	
-    	Scanner MN = new Scanner(new FileReader("C:\\Users\\3R\\Desktop\\UserPass.txt\\"));
+    	Scanner MN = new Scanner(new FileReader("UserPass.txt"));
     	int var = 0;
     	while(MN.hasNextLine()) {
     		Scanner line = new Scanner (MN.nextLine());
@@ -23,29 +23,32 @@ public class Driver extends Hamdan {
        		
     		Database.UserList.add(new User(as, bs,cs,ds,es,fs,gs));
     		Database.UserList.remove(var);
-    	
+			System.out.println(Database.UserList);
+
     		var++;
     	}
     	MN.close();
+		Hamdan x = new Hamdan();
     	
-    	
-    	Initiative Donate = new Initiative("","","Donation","10-11-2024","5:30","Collect money",9);
+    
+	
+    //	Initiative Donate = new Initiative("","","Donation","10-11-2024","5:30","Collect money",9);
     	
    
-    	Initiative Donate1 = new Initiative("","","Charity","10-11-2024","5:30","Collect money",7);
+   // 	Initiative Donate1 = new Initiative("","","Charity","10-11-2024","5:30","Collect money",7);
 //    	Database.entersEvent(Donate);
 //    	
     	
 //    	System.out.println(Donate.UserList.get(0).toStringInitiatorView());
 //    	System.out.println(Donate.VolunteerList.get(1).toStringInitiatorView());
     	
-    	System.out.println(Donate1.ParticipateList);
+   // 	System.out.println(Donate1.ParticipateList);
     	
     	// System.out.println(Database.EventList.get(0));
 //    	System.out.println(Database.UserList.get(1).getNameo());
 //    	System.out.println(Database.UserList.get(0).getPassword1());
 //    	System.out.println(Database.UserList.size());
-    	Hamdan x = new Hamdan();
+    //	Hamdan x = new Hamdan();
 
     	
     
@@ -70,7 +73,8 @@ public class Driver extends Hamdan {
   //  System.out.println(Database.UserList.get(0).getNameo());
     
    // System.out.println(Database.UserList.get(0).getPassword1());
+	}
+}
     
 
-}
-}
+

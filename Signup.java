@@ -8,7 +8,7 @@ import java.io.*;
 
 
 
-public class Signup extends JFrame {
+class Signup extends JFrame {
 
 
 JTextField UserN;
@@ -77,16 +77,16 @@ private class ALsignup implements ActionListener {
         	 	
     } 
         if (ten && ema && ful)  {
-           	 User signup1 = new User("", UserN.getText(), Pass.getText() ,PhoneNum.getText() ,Email.getText() ,Address.getText()  , " " );
+           	 User signup1 = new User("", UserN.getText(), Pass.getText() ,PhoneNum.getText() ,Email.getText() ,Address.getText().replaceAll("\\s+","")  , " " );
              try {
                  // Set the second parameter of FileWriter to true for append mode
-                 FileWriter fileWriter = new FileWriter("C:\\Users\\3R\\Desktop\\UserPass.txt", true);
+                 FileWriter fileWriter = new FileWriter("UserPass.txt", true);
 
                  // Wrap the FileWriter in a PrintWriter for convenient writing
                  PrintWriter printWriter = new PrintWriter(fileWriter);
 
                  // Write to the file
-                 printWriter.println("Database " +UserN.getText()+" "+Pass.getText()+" "+ PhoneNum.getText()+" "+ Email.getText()+""+ Address.getText() + " "+ DAY.getSelectedItem()+"-"+Mon.getSelectedItem()+"-"+Year.getSelectedItem() );
+                 printWriter.println("Database " +UserN.getText()+" "+Pass.getText()+" "+ PhoneNum.getText()+" "+ Email.getText()+" "+ Address.getText().replaceAll("\\s+","") + " "+ DAY.getSelectedItem()+"-"+Mon.getSelectedItem()+"-"+Year.getSelectedItem() );
               
                  // Close the resources
                  printWriter.close();

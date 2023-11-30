@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class AdminPage extends JFrame{
 
@@ -33,8 +34,14 @@ public class AdminPage extends JFrame{
 
 
 
+
+     //Jtable 
+ 
+
+
     c.add(Welcome);
-    c.add(Initiatives);
+    //c.add(Initiatives);
+    //c.add(x);
 
     //for some reason this needs to be in the end
     setLocationRelativeTo(null);
