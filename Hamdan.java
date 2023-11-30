@@ -36,8 +36,8 @@ private class ALadmin implements ActionListener{
 
 private class ALlogin implements ActionListener{
     public void actionPerformed(ActionEvent e)  {
-      
-
+     
+boolean twe1 = false;
         
         if(e.getSource()==login){
         	if(pass.getText().equals("")||username.getText().equals("")){
@@ -47,13 +47,26 @@ private class ALlogin implements ActionListener{
         		if ( username.getText().equals(Database.UserList.get(vr).getNameo()) && pass.getText().equals(Database.UserList.get(vr).getPassword1())) {
         			dispose(); 
         			LoginPage x = new LoginPage();
-                    
+        			twe1 = true;
                 	break;
 
         	}
         		} 
      
         }
+        
+        if (twe1) {
+        	String dd = "C:\\Users\\3R\\eclipse-workspace\\Project\\src\\Currentuser.txt";
+
+            try {
+                PrintWriter printWriter2 = new PrintWriter(dd);
+                printWriter2.println(username.getText());
+                printWriter2.close();
+                System.out.println("Hey.");
+            } catch (IOException an) {
+                an.printStackTrace();
+            }
+              }
 }
 }
 
