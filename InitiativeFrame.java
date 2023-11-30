@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.*;
 import javax.swing.*;
-
+import javax.swing.table.*;
 public class InitiativeFrame extends JFrame{
 
     JTextField Theme;
@@ -18,9 +18,9 @@ public class InitiativeFrame extends JFrame{
     JComboBox Time;
     JComboBox CreditHour;
     
-//
-
-
+    
+    
+  
 
 
     private class ALsubmit implements ActionListener{
@@ -31,7 +31,7 @@ public class InitiativeFrame extends JFrame{
             	if(Theme.getText().equals("")||Description.getText().equals("")){
             		JOptionPane.showMessageDialog(null , "You left one or more empty fields","re-enter information",JOptionPane.PLAIN_MESSAGE); 
             	} else { 
-            			Initiative mk = new Initiative(" ", " ", Theme.getText(), Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem(), Time.getSelectedItem().toString() , Description.getText(), " ") ;
+            			Initiative mk = new Initiative(" 	a", " a ", Theme.getText(), Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem(), Time.getSelectedItem().toString() , Description.getText().replaceAll("\\s+","-"), " 99") ;
                     	LoginPage x = new LoginPage(); 
                         dispose();   
                         System.out.println(Database.EventList);
@@ -46,16 +46,13 @@ public class InitiativeFrame extends JFrame{
 
                          PrintWriter printWriter1 = new PrintWriter(fileWriter1);
 Scanner sss = new Scanner(new FileReader("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\Currentuser.txt"));
-                         printWriter1.println("Event: "+ sss.next() +" " +Theme.getText()+" "+ Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem()+" "+ Time.getSelectedItem().toString() +" "+ Description.getText() + " " +"1"  );
+                         printWriter1.println("Server "+ sss.next() +" " +Theme.getText()+" "+ Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem()+" "+ Time.getSelectedItem().toString() +" "+ Description.getText().replaceAll("\\s+","-") + " " +" 1 "  );
         
                          printWriter1.close();
                          fileWriter1.close();
 
                          System.out.println("D1111.");
 
-                         
-                         
-                         
                          
                      } catch (IOException an) {
                          an.printStackTrace();
@@ -64,6 +61,8 @@ Scanner sss = new Scanner(new FileReader("C:\\Users\\3R\\eclipse-workspace\\Proj
     }}
         
 
+
+    
     private class ALback implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
         	
