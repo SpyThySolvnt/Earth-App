@@ -13,14 +13,14 @@ class Initiative extends User{
 
 	
 	//Full Constructor
-	public Initiative(String data, String name,String nameOE,String dateOfEvent,String timeOfEvent,String descriptionOfEvent, int crOE) {
+	public Initiative(String data, String name,String nameOE,String dateOfEvent,String timeOfEvent,String descriptionOfEvent, String crOE) {
 		super(data = "",name );
 		this.nameOE=nameOE;
 		this.idOE = setIdOfEvent();
 		this.dateOE=dateOfEvent;
 		this.descriptionOE=descriptionOfEvent;
 		this.timeOE=timeOfEvent;
-		this.crOE=crOE;
+		this.crOE= 1;
 		statusBoolean = true;
 		 EventList.add(this);
 		 j++;
@@ -32,13 +32,14 @@ class Initiative extends User{
 		
 	}
 	
-	 public void editEventInfo( String nameOE, String dateOE, String timeOE , String  descriptionOE, int  crOE) {
+	 public void editEventInfo( String nameOE, String dateOE, String timeOE , String  descriptionOE, String  crOE) {
 	    	this.nameOE = nameOE;
 	        this.idOE = setIdOfEvent(); // You need to implement this method
 	        this.dateOE= dateOE;
 	        this.timeOE = timeOE;
 	        this.descriptionOE = descriptionOE;
-	        this.crOE = crOE;
+	        
+	        this.crOE = Integer.parseInt(crOE);
 	        EventList.add(this);
 	    	EventList.remove(count-1) ;
 	    }
