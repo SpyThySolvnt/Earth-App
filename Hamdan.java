@@ -34,8 +34,8 @@ private class ALadmin implements ActionListener{
     }
 }
 
-private class ALlogin implements ActionListener{
-    public void actionPerformed(ActionEvent e)  {
+private class ALlogin implements ActionListener {
+    public void actionPerformed(ActionEvent e){
      
 boolean twe1 = false;
         
@@ -62,7 +62,6 @@ boolean twe1 = false;
                 PrintWriter printWriter2 = new PrintWriter(dd);
                 printWriter2.println(username.getText());
                 printWriter2.close();
-                System.out.println("Hey.");
             } catch (IOException an) {
                 an.printStackTrace();
             }
@@ -81,7 +80,7 @@ private class ALsignup implements ActionListener {
     
 
 //web thingy
-        Hamdan(){
+        Hamdan() {
         
             
         c = getContentPane();
