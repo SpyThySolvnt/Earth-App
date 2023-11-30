@@ -51,7 +51,21 @@ private class ALsignup implements ActionListener {
         ten = false;
         ful = false;
         ema = false;
+        
 
+        if(e.getSource()==Signup) {
+            int jtxtname = UserN.getText().length();
+            if(jtxtname<3 || jtxtname>20) {
+         	   JOptionPane.showMessageDialog(null,"your username  should contain 3~20 letters ","error",JOptionPane.ERROR_MESSAGE);
+         } 
+    	}
+        
+        if(e.getSource()==Signup) {
+            int jtxtpass = Pass.getText().length();
+            if(jtxtpass<8 || jtxtpass>20) {
+         	   JOptionPane.showMessageDialog(null,"your password  should contain 8~20 numbers ","error",JOptionPane.ERROR_MESSAGE);
+         } 
+    	}
         
         
         if(e.getSource()==Signup) {
@@ -59,6 +73,7 @@ private class ALsignup implements ActionListener {
         if(jtxtnum<10 || jtxtnum>10) {
      	   JOptionPane.showMessageDialog(null,"The Phone number must contain 10 numbers exactly ","error",JOptionPane.ERROR_MESSAGE);
      } else ten = true;
+        
         
         String jtxtemail = Email.getText();
         if (jtxtemail.contains("@")) {
