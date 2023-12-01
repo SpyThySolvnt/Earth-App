@@ -80,7 +80,7 @@ private class ALsignup implements ActionListener {
            	 User signup1 = new User("", UserN.getText(), Pass.getText() ,PhoneNum.getText() ,Email.getText() ,Address.getText().replaceAll("\\s+","")  , DAY.getSelectedItem()+"-"+Mon.getSelectedItem()+"-"+Year.getSelectedItem() );
              try {
                  // Set the second parameter of FileWriter to true for append mode
-                 FileWriter fileWriter = new FileWriter("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\UserPass.txt", true);
+                 FileWriter fileWriter = new FileWriter("UserPass.txt", true);
 
                  // Wrap the FileWriter in a PrintWriter for convenient writing
                  PrintWriter printWriter = new PrintWriter(fileWriter);

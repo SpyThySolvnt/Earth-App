@@ -17,10 +17,28 @@ public class LoginPage extends JFrame{
     JTable x;
    
     
-    public static String row [][] = {{}} ;
+    public static String row [][] ;
     Container c;
 
+    public void loadTable()  {
+        DefaultTableModel t = (DefaultTableModel) x.getModel();
 
+        try (Scanner nm = new Scanner(new FileReader("IniLIST.txt"))) {
+
+            while (nm.hasNextLine()) {
+                Scanner lin = new Scanner(nm.nextLine());
+                Object[] rw = new Object[7];
+                for (int i = 0; i < 7 && lin.hasNext(); i++) {
+                    rw[i] = lin.next();
+}
+                t.addRow(rw);
+                lin.close();
+            }
+
+        } catch (IOException an) {
+            an.printStackTrace();
+        }
+    }
 
     private class ALinitiative implements ActionListener{
         public void actionPerformed(ActionEvent e){     
@@ -120,23 +138,38 @@ public class LoginPage extends JFrame{
 
 
 
-    Vector rows = new Vector();
-    Vector columns = new Vector();
+    // Vector rows = new Vector(); 
+
+    // rows.add((Database.EventList.));
+    
+
+
+
+
+
+
+
+    // Vector columns = new Vector();
+
+
+    // columns.add("test 1 ");
+    // columns.add("test2");
+
     
 
 
     //Jtable 
-    // columns  = {"Counter","Initiator "," Initiative","Description","Credit Hour","Time","Date"};
+    String columns[]  = {"Counter","Initiator "," Initiative","Description","Credit Hour","Time","Date"};
     
  
 	
 
   
 
-DefaultTableModel model = new DefaultTableModel( rows , columns ) {
+DefaultTableModel model = new DefaultTableModel(  row ,  columns ) {
 
 
-public boolean isCellEditable(int row, int column) {
+public boolean isCellEditable( int rows,  int columns) {
     return false;
     }
   };
@@ -145,13 +178,18 @@ public boolean isCellEditable(int row, int column) {
     
     x = new JTable(model);
     JScrollPane y = new JScrollPane(x);
-    y.setBounds(200,200,500,100);
+    y.setBounds(100,200,600,300);
     x.getTableHeader().setReorderingAllowed(false);
     x.getTableHeader().setResizingAllowed(false);
     
-   rows.add(Database.EventList.get(1).getNameOE());
-   System.out.print(rows);
+//    rows.add(Database.EventList.get(1).getNameOE());
+//    System.out.print(rows);
   //adding assests
+
+
+    loadTable();
+
+
     c.add(initiative);
     c.add(Settings);
     c.add(Initiative);

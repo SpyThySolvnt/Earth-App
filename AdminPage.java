@@ -12,7 +12,32 @@ public class AdminPage extends JFrame{
     JButton Approve;
     JTextArea Initiatives;
     JTable z;
+    JButton Reject;
     Container c;
+
+
+
+
+
+
+    private class ALreject implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     AdminPage(){
@@ -32,6 +57,14 @@ public class AdminPage extends JFrame{
 
     Initiatives = new JTextArea();
     Initiatives.setBounds(100,100,500,500);
+
+    Reject = new JButton("Reject");
+
+
+    AL
+    
+
+
 
 
 

@@ -31,6 +31,11 @@ public class Driver extends Hamdan {
     		var++;
     	}
     	MN.close();
+<<<<<<< Updated upstream
+=======
+		Hamdan x = new Hamdan();
+		System.out.println(Database.EventList);
+>>>>>>> Stashed changes
     	
     	
     	Scanner op = new Scanner(new FileReader("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\IniLIST.txt"));

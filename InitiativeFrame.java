@@ -2,6 +2,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.sql.Time;
+import java.time.Month;
+import java.time.Year;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -18,14 +21,19 @@ public class InitiativeFrame extends JFrame{
     JComboBox Time;
     JComboBox CreditHour;
     
+<<<<<<< Updated upstream
     
     
   
+=======
+
+
+>>>>>>> Stashed changes
 
 
     private class ALsubmit implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
-       boolean twe = false;
+        	  boolean twe = false;
         	   
             if(e.getSource()==Submit) {
             	if(Theme.getText().equals("")||Description.getText().equals("")){
@@ -42,17 +50,19 @@ public class InitiativeFrame extends JFrame{
                         
           if (twe) {
         	  try {
-                         FileWriter fileWriter1 = new FileWriter("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\IniLIST.txt", true);
-
+                         FileWriter fileWriter1 = new FileWriter("IniLIST.txt", true);
                          PrintWriter printWriter1 = new PrintWriter(fileWriter1);
+<<<<<<< Updated upstream
 Scanner sss = new Scanner(new FileReader("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\Currentuser.txt"));
                          printWriter1.println("Server "+ sss.next() +" " +Theme.getText()+" "+ Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem()+" "+ Time.getSelectedItem().toString() +" "+ Description.getText().replaceAll("\\s+","-") + " " +" 1 "  );
+=======
+Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
+                         printWriter1.println("Event: "+ sss.next() +" " +Theme.getText()+" "+ Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem()+" "+ Time.getSelectedItem().toString() +" "+ Description.getText() + " " +"1"  );
+>>>>>>> Stashed changes
         
                          printWriter1.close();
                          fileWriter1.close();
-
                          System.out.println("D1111.");
-
                          
                      } catch (IOException an) {
                          an.printStackTrace();

@@ -56,7 +56,7 @@ boolean twe1 = false;
         }
         
         if (twe1) {
-        	String dd = "C:\\Users\\3R\\eclipse-workspace\\Project\\src\\Currentuser.txt";
+        	String dd = "Currentuser.txt";
 
             try {
                 PrintWriter printWriter2 = new PrintWriter(dd);
