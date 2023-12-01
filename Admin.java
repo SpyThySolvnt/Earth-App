@@ -37,16 +37,22 @@ public class Admin {
     }
 
     public void removeInitiative(Initiative initiative) {
-        // Implementation to remove initiative from a centralized list
-        // You can implement this based on your design
+       initiative.remove();
     }
 
-    public void viewAllInitiatives() {
-        // Implementation to view all initiatives
-        // You can implement this based on your design
+    public void viewAllInitiatives(List<Initiative> initiatives) {
+    if (initiatives != null && !initiatives.isEmpty()) {
+        System.out.println("All Initiatives:");
+        for (Initiative initiative : initiatives) {
+            System.out.println("Initiative ID: " + initiative.getId());
+            System.out.println("Initiative Name: " + initiative.getName());
+            System.out.println("Initiative Status: " + (initiative.getStatusBoolean() ? "Approved" : "Pending"));
+            System.out.println("--------------------");
+        }
+    } else {
+        System.out.println("No initiatives available.");
     }
-
-    // Other high-level operations for managing initiators and volunteers
+}
 
     // Example method to view details of any record
     public void viewDetails(Object record) {
