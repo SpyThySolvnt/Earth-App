@@ -20,10 +20,14 @@ public class LoginPage extends JFrame{
     public static String row [][] ;
     Container c;
 
+
+
+
+
     public void loadTable()  {
         DefaultTableModel t = (DefaultTableModel) x.getModel();
 
-        try (Scanner nm = new Scanner(new FileReader("IniLIST.txt"))) {
+        try (Scanner nm = new Scanner(new FileReader("Approved.txt"))) {
 
             while (nm.hasNextLine()) {
                 Scanner lin = new Scanner(nm.nextLine());
@@ -39,7 +43,13 @@ public class LoginPage extends JFrame{
             an.printStackTrace();
         }
     }
-
+// private void writeObjectToFile(PrintWriter writer, Object[] rowData) {
+// 		// Modify this method based on your actual object type and how you want to format it in the file
+// 		for (Object obj : rowData) {
+// 			writer.print(obj + " ");
+// 		}
+// 		writer.println(); // Move to the next line for the next object
+// 	}
     private class ALinitiative implements ActionListener{
         public void actionPerformed(ActionEvent e){     
             InitiativeFrame x = new InitiativeFrame();
@@ -129,6 +139,8 @@ public class LoginPage extends JFrame{
     Settings.addActionListener(sett);
     ALvolunteer vol = new ALvolunteer();
     volunteer.addActionListener(vol);
+    ALback b = new ALback();
+    Back.addActionListener(b);
 
 
 

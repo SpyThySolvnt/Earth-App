@@ -22,7 +22,7 @@ public class Complaint extends JFrame{
     }
     private class ALback implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
-            Hamdan x = new Hamdan(); 
+            LoginPage y = new LoginPage(); 
             dispose();   
             
             

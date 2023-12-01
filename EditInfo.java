@@ -21,9 +21,46 @@ Container c;
 
 
 
+
+
+
+
+    //   try {
+ 
+    //     }
+
+    //     catch (IOException an){
+    //         an.printStackTrace();
+    //     }
+
+
+
+
+
+
+
+
 private class ALsubmit implements ActionListener{
     public void actionPerformed(ActionEvent e){
-        Hamdan x = new Hamdan();
+         
+
+        //  try {
+        //     String d = DAY.getSelectedItem().toString();
+        //     String m = Mon.getSelectedItem().toString();
+        //     String y =Year.getSelectedItem().toString();
+
+        //     String DateOfBirth = d+"-"+m+"-"+y ;
+
+        //     editUserInformation(UserN.getText(),Pass.getText(),PhoneNum.getText(),Email.getText(),Address.getText(), DateOfBirth);
+        // }
+        
+
+
+
+        // catch (IOException an){
+        //     an.printStackTrace();
+        // }
+        LoginPage x = new LoginPage();
         dispose();
     }
 }

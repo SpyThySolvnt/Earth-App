@@ -21,14 +21,6 @@ public class InitiativeFrame extends JFrame{
     JComboBox Time;
     JComboBox CreditHour;
     
-<<<<<<< Updated upstream
-    
-    
-  
-=======
-
-
->>>>>>> Stashed changes
 
 
     private class ALsubmit implements ActionListener{
@@ -39,7 +31,7 @@ public class InitiativeFrame extends JFrame{
             	if(Theme.getText().equals("")||Description.getText().equals("")){
             		JOptionPane.showMessageDialog(null , "You left one or more empty fields","re-enter information",JOptionPane.PLAIN_MESSAGE); 
             	} else { 
-            			Initiative mk = new Initiative(" 	a", " a ", Theme.getText(), Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem(), Time.getSelectedItem().toString() , Description.getText().replaceAll("\\s+","-"), " 99") ;
+            			Initiative mk = new Initiative(" test", " also test ", Theme.getText().replaceAll("\\s+","-"), Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem(), Time.getSelectedItem().toString() , Description.getText().replaceAll("\\s+",""), " 99") ;
                     	LoginPage x = new LoginPage(); 
                         dispose();   
                         System.out.println(Database.EventList);
@@ -50,18 +42,21 @@ public class InitiativeFrame extends JFrame{
                         
           if (twe) {
         	  try {
-                         FileWriter fileWriter1 = new FileWriter("IniLIST.txt", true);
+                         FileWriter fileWriter1 = new FileWriter("PendingAdmin.txt", true);
+                         FileWriter fileWriter2 = new FileWriter("IniLIST.txt", true);
                          PrintWriter printWriter1 = new PrintWriter(fileWriter1);
-<<<<<<< Updated upstream
-Scanner sss = new Scanner(new FileReader("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\Currentuser.txt"));
-                         printWriter1.println("Server "+ sss.next() +" " +Theme.getText()+" "+ Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem()+" "+ Time.getSelectedItem().toString() +" "+ Description.getText().replaceAll("\\s+","-") + " " +" 1 "  );
-=======
+                         PrintWriter printWriter2 = new PrintWriter(fileWriter2);
+
 Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
-                         printWriter1.println("Event: "+ sss.next() +" " +Theme.getText()+" "+ Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem()+" "+ Time.getSelectedItem().toString() +" "+ Description.getText() + " " +"1"  );
->>>>>>> Stashed changes
-        
+                        String x =sss.next();
+                         printWriter1.println("Event: "+ x +" " +Theme.getText().replaceAll("\\s+","-")+" "+Description.getText().replaceAll("\\s+","-")+" "+CreditHour.getSelectedItem()+" "+ Time.getSelectedItem().toString()  + " " +  Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem() );
+                         printWriter2.println("Event: "+ x +" " +Theme.getText().replaceAll("\\s+","-")+" "+Description.getText().replaceAll("\\s+","-")+" "+CreditHour.getSelectedItem()+" "+ Time.getSelectedItem().toString()  + " " +  Day.getSelectedItem()+"-"+Month.getSelectedItem()+"-"+Year.getSelectedItem() );
+
                          printWriter1.close();
                          fileWriter1.close();
+                         printWriter2.close();
+                         fileWriter2.close();
+                         sss.close();
                          System.out.println("D1111.");
                          
                      } catch (IOException an) {
@@ -76,7 +71,7 @@ Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
     private class ALback implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
         	
-            Hamdan x = new Hamdan(); 
+            LoginPage x = new LoginPage(); 
             dispose();   
             
             
@@ -116,13 +111,13 @@ Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     c = getContentPane();
     c.setLayout(null);
-    setSize(500,800);
+    setSize(500,600);
     setTitle("Create an Initiative");
 
 
 
     JLabel theme = new JLabel("What's The Name Of The Initiative?");
-    theme.setBounds(190,0,150,50);
+    theme.setBounds(140,0,200,50);
     Theme = new JTextField();
     Theme.setBounds(30,50,425,30);
     JLabel desc = new JLabel("What's The description?");
@@ -130,30 +125,35 @@ Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
     Description = new JTextArea();
     Description.setBounds(30,160,425,100);
     Submit = new JButton("Submit");
-    Submit.setBounds(300,700,100,30); 
+    Submit.setBounds(300,500,100,30); 
     Back = new JButton("Back");
-    Back.setBounds(100,700,100,30);
-    JLabel DOB = new JLabel("Date Of Initiative?");
+    Back.setBounds(100,500,100,30);
+    JLabel DOB = new JLabel("Date Of Initiative:");
     DOB.setBounds(40,300,150,30);
-    JLabel Ti = new JLabel("Time Of Initiative?");
-    Ti.setBounds(40,400,150,30);
+    JLabel Ti = new JLabel("Time Of Initiative:");
+    Ti.setBounds(20,400,150,30);
+    JLabel cr =new JLabel("Credit Hours:");
+    cr.setBounds(260,400,150,30);
     
     String[] r = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
     String[] rr = {"January","Febuary","March","April","May","June","July","August","October","November","December"};
     String[] rrr = {"2023","2024"};
     String[] time = {"0000","0030","0100","0130","0200","0230","0300","0330","0400","0430","0500","0530","0600","0630","0700","0730","0800","0830","0900","0930","1000","1030","1100","1130","1200","1230","1300","1330","1400","1430","1500",
                     "1530","1600","1630","1700","1730","1800","1830","1900","1930","2000","2030","2100","2130","2200","2230","2300","2330"};
+    String[] credit = {"1","2","3","4","5","6","7","8","9"};
 
 
     Day = new JComboBox(r);
     Month = new JComboBox(rr);
     Year = new JComboBox(rrr);
     Time = new JComboBox(time);
+    CreditHour = new JComboBox(credit);
 
     Day.setBounds(150,300,50,30);
     Month.setBounds(200,300,80,30);
     Year.setBounds(280,300,80,30);
-    Time.setBounds(200,400,80,30);
+    Time.setBounds(120,400,80,30);
+    CreditHour.setBounds(340,400,80,30);
 
 
 
@@ -177,6 +177,9 @@ Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
     ALtime t = new ALtime();
     Time.addActionListener(t);
 
+    ALcredithour q = new ALcredithour();
+    CreditHour.addActionListener(q);
+
 
 
     c.add(theme);
@@ -191,6 +194,8 @@ Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
     c.add(DOB);
     c.add(Time);
     c.add(Ti);
+    c.add(CreditHour);
+    c.add(cr);
 
 
 

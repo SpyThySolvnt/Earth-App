@@ -26,7 +26,7 @@ class Initiative extends User{
 		 j++;
 	        count = j;
 	}
-	
+
 	public void deleteEvent() {
 		EventList.remove(count-1);
 		
