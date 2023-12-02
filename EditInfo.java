@@ -133,32 +133,41 @@ EditInfo(){
    Integer[] Years = {1960 ,1961 ,1962 ,1963 ,1964 ,1965 ,1966 ,1967 ,1968 ,1969 ,1970 ,1971 ,1972 ,1973 ,1974 ,1975 ,1976 ,1977 ,1978 ,1979 ,1980 ,1981 ,1982 ,1983 ,1984 ,1985 ,1986 ,1987 ,1988 ,1989 ,1990 ,1991 ,1992 ,1993 ,1994 ,1995 ,1996 ,1997 ,1998 ,1999 ,2000 ,2001 ,2002 ,2003 ,2004 ,2005 ,2006 ,2007 ,2008 ,2009 
     ,2010 ,2011 ,2012 ,2013 ,2014 ,2015 ,2016 ,2017 ,2018 ,2019 ,2020 ,2021 ,2022 ,2023} ;
    JLabel username = new JLabel("User Name:");
+    username.setForeground(Color.WHITE);
     username.setBounds(115,80,200,50);
     UserN = new JTextField();
     UserN.setBounds(185,80,225,50);
     JLabel password = new JLabel("Password:");
+    password.setForeground(Color.WHITE);
     password.setBounds(115,130,200,50);
     Pass = new JTextField();
     Pass.setBounds(185,130,225,50);
     JLabel phoneNum = new JLabel("Phone Number:");
+    phoneNum.setForeground(Color.WHITE);
     phoneNum.setBounds(95,180,150,50);
     PhoneNum = new JTextField();
     PhoneNum.setBounds(185,180,225,50);
    JLabel email = new JLabel("Email:");
+   email.setForeground(Color.WHITE);
    email.setBounds(115,230,150,50);
    Email = new JTextField();
    Email.setBounds(185,230,225,50); 
    JLabel address = new JLabel("Address:");
+   address.setForeground(Color.WHITE);
    address.setBounds(115,280,150,50);
    Address = new JTextField();
    Address.setBounds(185,280,225,50);
    JLabel dob = new JLabel("Date Of Birth:");
+   dob.setForeground(Color.WHITE);
    dob.setBounds(105,330,150,50);
    DAY = new JComboBox(Day); 
+   DAY.setBackground(new Color(200, 184, 138));
    DAY.setBounds(185,330,50,50);
    Mon = new JComboBox(Month);
+   Mon.setBackground(new Color(200, 184, 138));
    Mon.setBounds(235,330,100,50);
    Year = new JComboBox(Years);
+   Year.setBackground(new Color(200, 184, 138));
    Year.setBounds(335,330,75,50);
 
 
@@ -176,11 +185,13 @@ EditInfo(){
 
 
    edit = new JButton("Edit");
+   edit.setBackground(new Color(200, 184, 138));
    edit.setBounds(125,450,150,50);
    
 
 
    submit = new JButton("Submit");
+   submit.setBackground(new Color(200, 184, 138));
    submit.setBounds(325,450,150,50);
 
 
@@ -225,6 +236,9 @@ EditInfo(){
     c.add(edit);
     
     c.add(submit);
+
+
+    c.setBackground(new Color(71, 105, 48));
 }
 
 }

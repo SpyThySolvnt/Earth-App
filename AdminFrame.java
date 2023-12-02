@@ -69,15 +69,19 @@ public class AdminFrame extends JFrame{
         //labels 
         JLabel User = new JLabel("User Name:");
         User.setBounds(100,50,150,50);
+        User.setForeground(Color.WHITE);
         username = new JTextField();
         username.setBounds(200,50,150,50);
         JLabel Pass = new JLabel("Password:");
+        Pass.setForeground(Color.WHITE);
         Pass.setBounds(100,100,150,50);
         password = new JTextField();
         password.setBounds(200,100,150,50);
         Enter = new JButton("Enter");
+        Enter.setBackground(new Color(200, 184, 138));
         Enter.setBounds(100,210,300,50);
         Back = new JButton("Back");
+        Back.setBackground(new Color(200, 184, 138));
         Back.setBounds(0,0,100,30);
        // JLabel Id = new JLabel("ID :");
        // Id.setBounds(100,200,150,50);
@@ -111,6 +115,7 @@ public class AdminFrame extends JFrame{
         c.add(Back);
         //c.add(id);
         c.add(Enter);
+        c.setBackground(new Color(71, 105, 48));
 
 
     }

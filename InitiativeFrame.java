@@ -117,23 +117,30 @@ Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
 
 
     JLabel theme = new JLabel("What's The Name Of The Initiative?");
+    theme.setForeground(Color.WHITE);
     theme.setBounds(140,0,200,50);
     Theme = new JTextField();
     Theme.setBounds(30,50,425,30);
     JLabel desc = new JLabel("What's The description?");
+    desc.setForeground(Color.WHITE);
     desc.setBounds(170,100,150,50);
     Description = new JTextArea();
     Description.setBounds(30,160,425,100);
     Submit = new JButton("Submit");
+    Submit.setBackground(new Color(200, 184, 138));
     Submit.setBounds(300,500,100,30); 
     Back = new JButton("Back");
+    Back.setBackground(new Color(200, 184, 138));
     Back.setBounds(100,500,100,30);
     JLabel DOB = new JLabel("Date Of Initiative:");
+    DOB.setForeground(Color.WHITE);
     DOB.setBounds(40,300,150,30);
     JLabel Ti = new JLabel("Time Of Initiative:");
+    Ti.setForeground(Color.WHITE);
     Ti.setBounds(20,400,150,30);
     JLabel cr =new JLabel("Credit Hours:");
-    cr.setBounds(260,400,150,30);
+    cr.setForeground(Color.WHITE);
+    cr.setBounds(240,400,150,30);
     
     String[] r = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
     String[] rr = {"January","Febuary","March","April","May","June","July","August","October","November","December"};
@@ -144,16 +151,21 @@ Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
 
 
     Day = new JComboBox(r);
+    Day.setBackground(new Color(200, 184, 138));
     Month = new JComboBox(rr);
+    Month.setBackground(new Color(200, 184, 138));
     Year = new JComboBox(rrr);
+    Year.setBackground(new Color(200, 184, 138));
     Time = new JComboBox(time);
+    Time.setBackground(new Color(200, 184, 138));
     CreditHour = new JComboBox(credit);
+    CreditHour.setBackground(new Color(200, 184, 138));
 
     Day.setBounds(150,300,50,30);
     Month.setBounds(200,300,80,30);
     Year.setBounds(280,300,80,30);
     Time.setBounds(120,400,80,30);
-    CreditHour.setBounds(340,400,80,30);
+    CreditHour.setBounds(320,400,80,30);
 
 
 
@@ -197,7 +209,7 @@ Scanner sss = new Scanner(new FileReader("Currentuser.txt"));
     c.add(CreditHour);
     c.add(cr);
 
-
+    c.setBackground(new Color(71, 105, 48));
 
     setLocationRelativeTo(null);
 

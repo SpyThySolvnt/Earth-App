@@ -68,15 +68,18 @@ public class Settings extends JFrame{
         //buttons
         EditInfo = new JButton("Edit Info");
         EditInfo.setBounds(100,80,200,50);
+        EditInfo.setBackground(new Color(200, 184, 138));
         ALeditinfo ei = new ALeditinfo();
         EditInfo.addActionListener(ei);
 
         Complaint = new JButton("Complaint");
+        Complaint.setBackground(new Color(200, 184, 138));
         Complaint.setBounds(100,180,200,50);
         ALcomplaint cm =new ALcomplaint();
         Complaint.addActionListener(cm);
         
         Signout = new JButton("Sign Out");
+        Signout.setBackground(new Color(200, 184, 138));
         Signout.setBounds(100,280,200,50);
         ALsignout r = new ALsignout();
         Signout.addActionListener(r);
@@ -87,6 +90,8 @@ public class Settings extends JFrame{
         c.add(EditInfo);
         c.add(Complaint);
         c.add(Signout);
+
+        c.setBackground(new Color(71, 105, 48));
 
 
         setLocationRelativeTo(null);

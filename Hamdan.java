@@ -89,17 +89,22 @@ private class ALsignup implements ActionListener {
         setSize(700,500);
         setTitle("Earth App");
         JLabel EnterStuff =new JLabel("Please Write Your Login Information: ");
+        EnterStuff.setForeground(Color.WHITE);
         EnterStuff.setBounds(0, -100, 250, 250);
         JLabel EnterName =new JLabel("UserName:");
+        EnterName.setForeground(Color.WHITE);
         EnterName.setBounds(180, 50, 250, 250);
         username = new JTextField();
         username.setBounds(260,150,220,50);
         JLabel EnterPass= new JLabel("Password:");
+        EnterPass.setForeground(Color.WHITE);
         EnterPass.setBounds(180, 100, 250, 250);
         pass = new JTextField();
         pass.setBounds(260,200,220,50);
-        Photo = new JLabel("");
-        Photo.setBounds(150,100,100,100);
+        Photo = new JLabel();
+        Photo.setIcon(new ImageIcon("Please go easy on us Miss Bushra.jpeg"));
+        Dimension size = Photo.getPreferredSize();
+        Photo.setBounds(150,100,size.width,size.height);
         
 
 
@@ -108,9 +113,12 @@ private class ALsignup implements ActionListener {
 
         admin = new JButton("Admin Login");
         admin.setBounds(550,0,150,50);
+        admin.setBackground(new Color(200, 184, 138));
         login = new JButton("Login");
+        login.setBackground(new Color(200, 184, 138));
         login.setBounds(100, 350, 220, 50);
         signup = new JButton("Sign Up");
+        signup.setBackground(new Color(200, 184, 138));
         signup.setBounds(400,350,220,50);
 
 
@@ -140,7 +148,7 @@ private class ALsignup implements ActionListener {
         c.add(admin);
         c.add(login);
         c.add(signup);
-        c.add(Photo);
+        c.setBackground(new Color(71, 105, 48));
         //I dont know how to make with no error
 
         setLocationRelativeTo(null);
