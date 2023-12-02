@@ -14,16 +14,21 @@ public class LoginPage extends JFrame{
     JButton volunteer;
     JTextArea Place;
     JButton Back;
+    JButton MyInitiatives;
     JTable x;
    
     
     public static String row [][] ;
     Container c;
 
+
+
+
+
     public void loadTable()  {
         DefaultTableModel t = (DefaultTableModel) x.getModel();
 
-        try (Scanner nm = new Scanner(new FileReader("IniLIST.txt"))) {
+        try (Scanner nm = new Scanner(new FileReader("Approved.txt"))) {
 
             while (nm.hasNextLine()) {
                 Scanner lin = new Scanner(nm.nextLine());
@@ -39,7 +44,13 @@ public class LoginPage extends JFrame{
             an.printStackTrace();
         }
     }
-
+// private void writeObjectToFile(PrintWriter writer, Object[] rowData) {
+// 		// Modify this method based on your actual object type and how you want to format it in the file
+// 		for (Object obj : rowData) {
+// 			writer.print(obj + " ");
+// 		}
+// 		writer.println(); // Move to the next line for the next object
+// 	}
     private class ALinitiative implements ActionListener{
         public void actionPerformed(ActionEvent e){     
             InitiativeFrame x = new InitiativeFrame();
@@ -80,6 +91,13 @@ public class LoginPage extends JFrame{
             dispose();   
         }
     }
+    private class ALmyini implements ActionListener{
+        public void actionPerformed(ActionEvent e){ 
+
+
+   
+        }
+    }
 
 
 
@@ -98,6 +116,7 @@ public class LoginPage extends JFrame{
 
     
     JLabel initiative = new JLabel ("Welcome to the Earth App Here you can Volunteer and Create Initiative to help save the world bit by bit!");
+    initiative.setForeground(Color.WHITE);
     initiative.setBounds(150,0,600,150);
 
     
@@ -111,15 +130,25 @@ public class LoginPage extends JFrame{
     //buttons
 
     Initiative = new JButton("Create An Initiative");
+    Initiative.setBackground(new Color(200, 184, 138));
     Initiative.setBounds(250,100,400,50);
+
     Settings = new JButton("Settings");
+    Settings.setBackground(new Color(200, 184, 138));
     Settings.setBounds(0,580,150,80);
 
     volunteer = new JButton("VOLUNTEER");
-    volunteer.setBounds(300,550,300,30);
+    volunteer.setBackground(new Color(200, 184, 138));
+    volunteer.setBounds(260,550,150,30);
     
     Back = new JButton("Back");
+    Back.setBackground(new Color(200, 184, 138));
     Back.setBounds(0,0,100,30);
+
+
+    MyInitiatives = new JButton("My Initiatives");
+    MyInitiatives.setBackground(new Color(200, 184, 138));
+    MyInitiatives.setBounds(500,550,150,30);
     
     
     
@@ -129,6 +158,10 @@ public class LoginPage extends JFrame{
     Settings.addActionListener(sett);
     ALvolunteer vol = new ALvolunteer();
     volunteer.addActionListener(vol);
+    ALback b = new ALback();
+    Back.addActionListener(b);
+    ALmyini i = new ALmyini();
+    MyInitiatives.addActionListener(i);
 
 
 
@@ -178,7 +211,7 @@ public boolean isCellEditable( int rows,  int columns) {
     
     x = new JTable(model);
     JScrollPane y = new JScrollPane(x);
-    y.setBounds(100,200,600,300);
+    y.setBounds(150,200,600,300);
     x.getTableHeader().setReorderingAllowed(false);
     x.getTableHeader().setResizingAllowed(false);
     
@@ -195,7 +228,9 @@ public boolean isCellEditable( int rows,  int columns) {
     c.add(Initiative);
     c.add(volunteer);
     c.add(Back);
+    c.add(MyInitiatives);
     c.add(y);
+    c.setBackground(new Color(71, 105, 48));
 
 
 

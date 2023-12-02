@@ -47,12 +47,27 @@ private class ALsignup implements ActionListener {
         Hamdan x = new Hamdan();
         dispose();
         
-        boolean ten, ful ,ema;
+        boolean ten, ful ,ema, rere, kata;
         ten = false;
         ful = false;
         ema = false;
+        rere = false;
+        kata = false;
 
         
+        if(e.getSource()==Signup) {
+            int jtxtname = UserN.getText().length();
+            if(jtxtname<3 || jtxtname>20) {
+         	   JOptionPane.showMessageDialog(null,"your username  should contain 3~20 letters ","error",JOptionPane.ERROR_MESSAGE);
+         } else{kata = true;}
+    	}
+        
+        if(e.getSource()==Signup) {
+            int jtxtpass = Pass.getText().length();
+            if(jtxtpass<8 || jtxtpass>20) {
+         	   JOptionPane.showMessageDialog(null,"your password  should contain 8~20 numbers ","error",JOptionPane.ERROR_MESSAGE);
+         } else{rere = true;}
+    	}
         
         if(e.getSource()==Signup) {
         int jtxtnum = PhoneNum.getText().length();
@@ -76,7 +91,7 @@ private class ALsignup implements ActionListener {
         		} else ful = true;
         	 	
     } 
-        if (ten && ema && ful)  {
+        if (ten && ema && ful && rere && kata)  {
            	 User signup1 = new User("", UserN.getText(), Pass.getText() ,PhoneNum.getText() ,Email.getText() ,Address.getText().replaceAll("\\s+","")  , DAY.getSelectedItem()+"-"+Mon.getSelectedItem()+"-"+Year.getSelectedItem() );
              try {
                  // Set the second parameter of FileWriter to true for append mode
@@ -138,39 +153,50 @@ Signup(){
    
    
    JLabel username = new JLabel("User Name:");
+    username.setForeground(Color.WHITE);
     username.setBounds(80,60,200,50);
     UserN = new JTextField();
     UserN.setBounds(150,60,225,50);
     JLabel password = new JLabel("Password:");
+    password.setForeground(Color.WHITE);
     password.setBounds(80,110,200,50);
     Pass = new JTextField();
     Pass.setBounds(150,110,225,50);
     JLabel phoneNum = new JLabel("Phone Number:");
+    phoneNum.setForeground(Color.WHITE);
     phoneNum.setBounds(60,160,150,50);
     PhoneNum = new JTextField();
     PhoneNum.setBounds(150,160,225,50);
    JLabel email = new JLabel("Email:");
+   email.setForeground(Color.WHITE);
    email.setBounds(100,210,150,50);
    Email = new JTextField();
    Email.setBounds(150,210,225,50); 
    JLabel address = new JLabel("Address:");
+   address.setForeground(Color.WHITE);
    address.setBounds(90,260,150,50);
    Address = new JTextField();
    Address.setBounds(150,260,225,50);
    JLabel dob = new JLabel("Date Of Birth:");
+   dob.setForeground(Color.WHITE);
    dob.setBounds(70,310,150,50);
    DAY = new JComboBox(Day); 
+   DAY.setBackground(new Color(200, 184, 138));
    DAY.setBounds(150,310,50,50);
    Mon = new JComboBox(Month);
+   Mon.setBackground(new Color(200, 184, 138));
    Mon.setBounds(200,310,100,50);
    Year = new JComboBox(Years);
+   Year.setBackground(new Color(200, 184, 138));
    Year.setBounds(300,310,75,50);
 
 
    Signup = new JButton("Sign Up");
+   Signup.setBackground(new Color(200, 184, 138));
    Signup.setBounds(200,400,100,50); 
 
    Back = new JButton("Back");
+   Back.setBackground(new Color(200, 184, 138));
    Back.setBounds(0,0,100,30);
 
 
@@ -221,5 +247,6 @@ Signup(){
     c.add(Year);
     c.add(Signup);
     c.add(Back);
+    c.setBackground(new Color(71, 105, 48));
 }
     }

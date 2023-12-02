@@ -22,7 +22,7 @@ public class Complaint extends JFrame{
     }
     private class ALback implements ActionListener{
         public void actionPerformed(ActionEvent e){ 
-            Hamdan x = new Hamdan(); 
+            LoginPage y = new LoginPage(); 
             dispose();   
             
             
@@ -45,6 +45,7 @@ public class Complaint extends JFrame{
 
 
     JLabel issue = new JLabel("Whats Your Complaint About The App?");
+    issue.setForeground(Color.WHITE);
     issue.setBounds(135,50,300,50);
     
     Issue = new JTextArea();
@@ -53,11 +54,13 @@ public class Complaint extends JFrame{
 
     //buttons
     Submit = new JButton("Submit");
+    Submit.setBackground(new Color(200, 184, 138));
     Submit.setBounds(0,210,500,50);
     ALsubmit sb = new ALsubmit();
     Submit.addActionListener(sb);
 
     Back = new JButton("Back");
+    Back.setBackground(new Color(200, 184, 138));
     Back.setBounds(0,0,100,30);
     ALback s = new ALback();
     Back.addActionListener(s);
@@ -70,7 +73,8 @@ public class Complaint extends JFrame{
     c.add(Submit);
     c.add(issue);
     c.add(Back);
-
+    
+    c.setBackground(new Color(71, 105, 48));
     setLocationRelativeTo(null);
 
     }

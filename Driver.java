@@ -14,7 +14,7 @@ public class Driver extends Hamdan {
     	Database Database = new Database("Database");
     	
     	
-    	Scanner MN = new Scanner(new FileReader("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\UserPass.txt"));
+    	Scanner MN = new Scanner(new FileReader("UserPass.txt"));
     	int var = 0;
     	while(MN.hasNextLine()) {
     		Scanner line = new Scanner(MN.nextLine());
@@ -31,14 +31,13 @@ public class Driver extends Hamdan {
     		var++;
     	}
     	MN.close();
-<<<<<<< Updated upstream
-=======
-		Hamdan x = new Hamdan();
-		System.out.println(Database.EventList);
->>>>>>> Stashed changes
+
+
+
+
     	
     	
-    	Scanner op = new Scanner(new FileReader("C:\\Users\\3R\\eclipse-workspace\\Project\\src\\IniLIST.txt"));
+    	Scanner op = new Scanner(new FileReader("IniLIST.txt"));
     	int pp = 0;
     	while(op.hasNextLine()) {
     		Scanner line = new Scanner(op.nextLine());
